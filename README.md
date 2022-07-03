@@ -4,6 +4,7 @@ KIZAGAN is a python computer backdoor and it can take camera pictures,screenshot
 tr : KIZAGAN python ile yapılmış bir backdoor'dur.Bu backdoor kurbanin kamerasından görüntüler alabilir,ekran görüntüsü alabilir,mikrofon kaydı yapabilir ve daha fazlası...
 
 I am not responsible for the crimes you may commit with this trojan.
+
 tr : Bu trojan ile işleyebileceğiniz suçlardan sorumlu değilim.
 
 # Setup/Kurulum : 
