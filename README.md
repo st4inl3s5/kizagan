@@ -5,7 +5,7 @@ tr : KIZAGAN python ile yapılmış bir backdoor'dur.Bu backdoor kurbanin kamera
 
 # Setup/Kurulum : 
 
-#python setup.py
+# python setup.py
 
 
 # Usage/Kullanım : 
