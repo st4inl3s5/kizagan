@@ -66,8 +66,8 @@ $$ | \$$\ $$$$$$\ $$$$$$$$\ $$ |  $$ |\$$$$$$  |$$ |  $$ |$$ | \$$ |
         print(Fore.YELLOW+"\nAvrupa Hunlarının Savaş Tanrısı./God of War of the European Huns.\n")
         time.sleep(1)
         #print(secim)
-        print(Fore.GREEN+"\t\t\t\t\t\tAuthor : Yiğit Aydemir\n\n\n\n")
-
+        print(Fore.GREEN+"\t\t\t\t\t\tAuthor : Yiğit Aydemir")
+        print(Fore.GREEN+"\t\t\t\t\t\tInstagram : https://www.instagram.com/arduinocum.py/\n\n\n\n")
         dinleyici = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         dinleyici.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
         try:
@@ -84,7 +84,8 @@ $$ | \$$\ $$$$$$\ $$$$$$$$\ $$ |  $$ |\$$$$$$  |$$ |  $$ |$$ | \$$ |
         secim = random.choice(yazilar)
         print(Fore.GREEN+secim)
         print(Fore.YELLOW + "\nAvrupa Hunlarının Savaş Tanrısı./God of War of the European Huns.\n")
-        print(Fore.BLUE + "\t\t\t\t\t\tAuthor : Yiğit Aydemir\n\n\n\n")
+        print(Fore.BLUE + "\t\t\t\t\t\tAuthor : Yiğit Aydemir")
+        print(Fore.GREEN+"\t\t\t\t\t\tInstagram : https://www.instagram.com/arduinocum.py/\n\n\n\n")
         print(Fore.RED+"Komutlar için 'yardim' yaziniz./For commands write 'help'.")
 
     def jsonGonder(self,data):
