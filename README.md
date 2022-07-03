@@ -3,6 +3,11 @@ KIZAGAN is a python computer backdoor and it can take camera pictures,screenshot
 
 tr : KIZAGAN python ile yapılmış bir backdoor'dur.Bu backdoor kurbanin kamerasından görüntüler alabilir,ekran görüntüsü alabilir,mikrofon kaydı yapabilir ve daha fazlası...
 
+# Setup/Kurulum : 
+
+#python setup.py
+
+
 # Usage/Kullanım : 
 
 Change the IP(on the kizagan.py's baglanti_dene function and kizagan_listener.py's 164.line) to your IP (you can change the port if you want.)
