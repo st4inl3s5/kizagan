@@ -38,19 +38,6 @@ class Kayit():
         mythread3 = threading.Thread(target=self.startRecord)
         mythread3.start()
 
-"""
-    def kayitBasla(self):
-        while True:
-            a = int(input("Secim"))
-            try:
-                if a == 1:
-                    mythread = threading.Thread(target=self.startRecord)
-                    mythread.start()
-                else:
-                    self.stopRecord()
-            except Exception:
-                print("Bilinmeyen bir hata.")
 
-"""
 
 
