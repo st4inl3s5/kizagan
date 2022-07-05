@@ -14,19 +14,20 @@ tr : Bu trojan ile işleyebileceğiniz suçlardan sorumlu değilim.
 
 # Usage/Kullanım : 
 
-Change the IP(on the kizagan.py's baglanti_dene function and kizagan_listener.py's 164.line) to your IP (you can change the port if you want.)
+Go to kizaganEN.py 214.line and change the ip according to yourself.(You can change the port if you want.)Then convert this file to exe and send to a victim.Wait for the victim opens the backdoor.
 
-tr:kizagan.py'nin baglanti_dene fonksiyonundaki ve kizagan_listener.py'nin 164.satırındaki ip adreslerini kendinize göre değiştirin.(İsterseniz port da değiştirebilirsiniz.)
+Finally, use this command to start listener in your machine :
+
+# python kizagan_listener.py -ip <ip_address_to_listen> -p <port_number_to_listen>
+
+tr:kizaganTR.py ' deki 214.satırda ip adresini kendinize göre değiştirin.(portu da değiştirebilirsiniz isterseniz.)Daha sonra bu dosyayı exe'ye çevirin ve bir kurbana gönderin.Kurbanın bu dosyayı açmasını bekleyin.
+
+Son olarak,bu komutu kullanarak dinleyiciyi kendi makinenizde başlatın :
+
+# python kizagan_listener.py -ip <dinlemek_istediğiniz_ip_adresi> -p <dinlemek_istediğiniz_port_numarası>
 
 
 
-![kizagan9](https://user-images.githubusercontent.com/68844502/177044095-5ef7e80f-ed5e-467a-826f-e2734bc06c65.png)
-
-![kizagan10](https://user-images.githubusercontent.com/68844502/177044104-7d0c4637-d9ae-4ded-ba92-5fa7078cf92c.png)
-
-Send kizagan.py(you can convert to exe file.) to victim.Start the listener.If victim open the file the connection comes to you.
-
-tr:Kizagan.py yi kurbana gönderin.(exe dosyasına çevirebilirsiniz.)Dinleyiciyi basşlatın.Eğer kurban dosyayı açarsa bağlantı size gelecektir.
 
 You don't need to start listener as soon as you send the file because kizagan will send you a connection every 5 seconds.
 
