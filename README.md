@@ -1,19 +1,23 @@
 # KIZAGAN
 KIZAGAN is a python computer backdoor and it can take camera pictures,screenshot,getting microphone sounds... etc.
 
+I am not responsible for the crimes you may commit with this backdoor.
+
+
 tr : KIZAGAN python ile yapılmış bir backdoor'dur.Bu backdoor kurbanin kamerasından görüntüler alabilir,ekran görüntüsü alabilir,mikrofon kaydı yapabilir ve daha fazlası...
 
-I am not responsible for the crimes you may commit with this trojan.
+Bu backdoor ile işleyebileceğiniz suçlardan sorumlu değilim.
 
-tr : Bu trojan ile işleyebileceğiniz suçlardan sorumlu değilim.
+# ENGLISH SETUP and USAGE :
 
-# Setup/Kurulum : 
+
+# Setup : 
 
 
 # python setup.py
 
 
-# Usage/Kullanım : 
+# Usage : 
 
 Go to kizaganEN.py 214.line and change the ip according to yourself.(You can change the port if you want.)Then convert this file to exe and send to a victim.Wait for the victim opens the backdoor.
 
@@ -27,26 +31,6 @@ Finally, use this command to start listener in your machine :
 
 ![kizagan4](https://user-images.githubusercontent.com/68844502/177312014-30db5b8b-db14-4177-bf39-c102e6a88d76.PNG)
 
-
-tr:kizaganTR.py ' deki 214.satırda ip adresini kendinize göre değiştirin.(portu da değiştirebilirsiniz isterseniz.)Daha sonra bu dosyayı exe'ye çevirin ve bir kurbana gönderin.Kurbanın bu dosyayı açmasını bekleyin.
-
-![kizagan2](https://user-images.githubusercontent.com/68844502/177311680-9d6093a8-d118-4b89-a955-372bbadc7961.PNG)
-
-Son olarak,bu komutu kullanarak dinleyiciyi kendi makinenizde başlatın :
-
-# python kizagan_listener.py -ip <dinlemek_istediğiniz_ip_adresi> -p <dinlemek_istediğiniz_port_numarası>
-
-![kizagan3](https://user-images.githubusercontent.com/68844502/177311743-274c9445-a8f8-4a61-9117-707205012435.PNG)
-
-![kizagan4](https://user-images.githubusercontent.com/68844502/177312087-d96896ea-197d-404d-921b-d878b7d55985.PNG)
-
-
-
-You don't need to start listener as soon as you send the file because kizagan will send you a connection every 5 seconds.
-
-tr:Dosyayı gönderdiğiniz gibi dinleyici'yi başlatmanıza gerek yok.Çünkü kizagan her 5 saniyede bir bağlantı isteği gönderecektir.
-
-Enjoy! / Tadını çıkarın!
 
 
 # EN example usages :
@@ -67,6 +51,30 @@ English help menu:
 
 Taking camera pictures,screenshots,keylogs and microphone recording...
 ![kizagan10](https://user-images.githubusercontent.com/68844502/177312217-cfda9dd7-5965-4735-b98f-f2602b18477f.PNG)
+
+# Author Instagram : https://www.instagram.com/arduinocum.py/
+
+# TURKISH SETUP and USAGE:
+
+# Kurulum : 
+
+
+# python setup.py
+
+
+# Kullanım :
+
+kizaganTR.py ' deki 214.satırda ip adresini kendinize göre değiştirin.(portu da değiştirebilirsiniz isterseniz.)Daha sonra bu dosyayı exe'ye çevirin ve bir kurbana gönderin.Kurbanın bu dosyayı açmasını bekleyin.
+
+![kizagan2](https://user-images.githubusercontent.com/68844502/177311680-9d6093a8-d118-4b89-a955-372bbadc7961.PNG)
+
+Son olarak,bu komutu kullanarak dinleyiciyi kendi makinenizde başlatın :
+
+# python kizagan_listener.py -ip <dinlemek_istediğiniz_ip_adresi> -p <dinlemek_istediğiniz_port_numarası>
+
+![kizagan3](https://user-images.githubusercontent.com/68844502/177311743-274c9445-a8f8-4a61-9117-707205012435.PNG)
+
+![kizagan4](https://user-images.githubusercontent.com/68844502/177312087-d96896ea-197d-404d-921b-d878b7d55985.PNG)
 
 
 
@@ -89,6 +97,4 @@ Türkçe yardim menüsü.
 Kamera resimleri,ekran görüntüleri,kurbanin bastigi tuslar ve kurbanin mikrofon kaydini almak...
 ![kizagan16](https://user-images.githubusercontent.com/68844502/177312682-52f4a3a3-6d9d-4f52-ab08-f5cc6559fbf3.PNG)
 
-
-# Author Instagram : https://www.instagram.com/arduinocum.py/
 # Yazarın Instagramı : https://www.instagram.com/arduinocum.py/
