@@ -57,7 +57,8 @@ Kullanıcıya yönelik okunabilir komutlar.
 
 Open the kizaganEN.py with text editor and change the ip and port according to yourself.
 
-![kizagan1](https://user-images.githubusercontent.com/68844502/177311519-5368fd34-4f8d-41cc-8582-81162d87329f.PNG)
+![kizagan1](https://user-images.githubusercontent.com/68844502/177414314-8fa96e2d-60a9-4777-80a4-5303d713266a.PNG)
+
 
 Finally, use this command to start listener in your machine :
 
@@ -105,7 +106,8 @@ Taking camera pictures,screenshots,keylogs and microphone recording...
 
 kizaganTR.py'yi bir text editörü ile açın, ip ve portu kendinize göre değiştirin.
 
-![kizagan2](https://user-images.githubusercontent.com/68844502/177311680-9d6093a8-d118-4b89-a955-372bbadc7961.PNG)
+![kizagan2](https://user-images.githubusercontent.com/68844502/177414347-bcdeda6b-be3a-4bd7-88a2-bbcb799f1329.PNG)
+
 
 Son olarak,bu komutu kullanarak dinleyiciyi kendi makinenizde başlatın :
 
