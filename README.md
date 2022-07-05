@@ -9,20 +9,32 @@ tr : KIZAGAN python ile yapılmış bir backdoor'dur.Bu backdoor kurbanin kamera
 Bu backdoor ile işleyebileceğiniz suçlardan sorumlu değilim.
 
 # New update version (1.0.1)
-New feautes : 
+New feautes :
+
 When backdoor opens, it makes itself permament automatically.
+
 Language options came.
+
 Better help menu.
+
 When you listener start,the script will see if there is an update(If there is an update, the script will ask you make an update.)
+
 Readable commands for user-oriented.
+
 
 tr:
 Yeni özellikler :
+
 Artık,backdoor kurban bilgisayarda açıldığı zaman otomatik olarak kendisini kalıcı yapacak.
+
 Dil seçenekleri geldi.
+
 Daha iyi yardim menüsü.
+
 Dinleyici'yi başlattığında,script güncelleme var mı diye bakacak(Eğer varsa,script sana güncelleme yapılsın mı diye soracak.)
+
 Kullanıcıya yönelik okunabilir komutlar.
+
 
 # ENGLISH SETUP and USAGE :
 
