@@ -2,7 +2,7 @@ import json
 from urllib.request import urlopen
 import os
 
-version_link = "https://raw.githubusercontent.com/st4inl3s5/kizagan/main/version.json"
+version_link = "https://raw.githubusercontent.com/st4inl3s5/kizagan/main/util/version.json"
 
 def Get_Latest_Info():
     url = urlopen(version_link)
