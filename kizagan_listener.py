@@ -8,7 +8,7 @@ import datetime
 import random
 import time
 import argparse
-import version_control
+from util import version_control
 
 
 colorama.init(autoreset=True)
@@ -148,7 +148,7 @@ class TR_Dinleyici():
         tarihli_dosya = str(tarih.hour) + ":" + str(tarih.minute) + ":" + str(tarih.second) + " "
         return tarihli_dosya
     def Yardim(self):
-        with open("menuTR.txt","r",encoding="utf-8") as menu:
+        with open("menus/menuTR.txt","r",encoding="utf-8") as menu:
             return Fore.GREEN+menu.read()
     def Dinleyici_Basla(self):
         while True:
@@ -320,7 +320,7 @@ class EN_Listener():
         date_file = str(date.hour) + ":" + str(date.minute) + ":" + str(date.second) + " "
         return date_file
     def Help(self):
-        with open("menuEN.txt","r") as menu:
+        with open("menus/menuEN.txt","r") as menu:
             return Fore.LIGHTGREEN_EX+menu.read()
 
     def Start_Listener(self):
