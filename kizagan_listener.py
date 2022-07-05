@@ -390,7 +390,7 @@ def Language_Choice_And_Update():
             is_update = version_control.Is_Update_Avaliable()
             if is_update:
                 listener = EN_Listener(args["ip_address"], int(args["port"]))
-                listener.Dinleyici_Basla()
+                listener.Start_Listener()
             else:
                 def Updating():
                     print(Fore.RED + "[!]Update avaliable.Do you want to download?(Y/N)")
@@ -403,7 +403,7 @@ def Language_Choice_And_Update():
                         print(Fore.YELLOW + "[+]There will be no update.")
                         time.sleep(1)
                         listener = EN_Listener(args["ip_address"], int(args["port"]))
-                        listener.Dinleyici_Basla()
+                        listener.Start_Listener()
                     else:
                         print(Fore.LIGHTRED_EX + "[-]Wrong choice.Choose it again.")
                         Updating()
