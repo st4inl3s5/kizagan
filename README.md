@@ -9,6 +9,7 @@ tr : Bu trojan ile işleyebileceğiniz suçlardan sorumlu değilim.
 
 # Setup/Kurulum : 
 
+
 # python setup.py
 
 
@@ -16,16 +17,28 @@ tr : Bu trojan ile işleyebileceğiniz suçlardan sorumlu değilim.
 
 Go to kizaganEN.py 214.line and change the ip according to yourself.(You can change the port if you want.)Then convert this file to exe and send to a victim.Wait for the victim opens the backdoor.
 
+![kizagan1](https://user-images.githubusercontent.com/68844502/177311519-5368fd34-4f8d-41cc-8582-81162d87329f.PNG)
+
 Finally, use this command to start listener in your machine :
 
 # python kizagan_listener.py -ip <ip_address_to_listen> -p <port_number_to_listen>
 
+![kizagan3](https://user-images.githubusercontent.com/68844502/177311607-d7a61438-3e76-40bf-8663-1f09e2039aee.PNG)
+
+![kizagan4](https://user-images.githubusercontent.com/68844502/177312014-30db5b8b-db14-4177-bf39-c102e6a88d76.PNG)
+
+
 tr:kizaganTR.py ' deki 214.satırda ip adresini kendinize göre değiştirin.(portu da değiştirebilirsiniz isterseniz.)Daha sonra bu dosyayı exe'ye çevirin ve bir kurbana gönderin.Kurbanın bu dosyayı açmasını bekleyin.
+
+![kizagan2](https://user-images.githubusercontent.com/68844502/177311680-9d6093a8-d118-4b89-a955-372bbadc7961.PNG)
 
 Son olarak,bu komutu kullanarak dinleyiciyi kendi makinenizde başlatın :
 
 # python kizagan_listener.py -ip <dinlemek_istediğiniz_ip_adresi> -p <dinlemek_istediğiniz_port_numarası>
 
+![kizagan3](https://user-images.githubusercontent.com/68844502/177311743-274c9445-a8f8-4a61-9117-707205012435.PNG)
+
+![kizagan4](https://user-images.githubusercontent.com/68844502/177312087-d96896ea-197d-404d-921b-d878b7d55985.PNG)
 
 
 
@@ -36,22 +49,46 @@ tr:Dosyayı gönderdiğiniz gibi dinleyici'yi başlatmanıza gerek yok.Çünkü 
 Enjoy! / Tadını çıkarın!
 
 
-![kizagan1](https://user-images.githubusercontent.com/68844502/177044241-d668f197-9801-4030-af11-09fea9847ce5.PNG)
+# EN example usages :
 
-![kizagan2](https://user-images.githubusercontent.com/68844502/177044243-f2c9185a-be17-42f2-8f29-9eec411f2c11.PNG)
+Listening connections.
 
-![kizagan3](https://user-images.githubusercontent.com/68844502/177044244-81ff796c-edaa-4c35-9b7a-f9cf7db9ef5b.PNG)
+![kizagan5](https://user-images.githubusercontent.com/68844502/177312224-02e6f87d-d837-4f1b-b123-1e069fb9176e.PNG)
 
-![kizagan4](https://user-images.githubusercontent.com/68844502/177044246-f1d9768d-4089-422f-9942-ad7524e44f13.PNG)
+A connection came.
+![kizagan6](https://user-images.githubusercontent.com/68844502/177312225-16a19f54-6f81-4f90-bb25-f9eb9ec1541a.PNG)
 
-![kizagan5](https://user-images.githubusercontent.com/68844502/177044247-f9d9e045-c448-4d48-976d-f07fdf66f437.PNG)
+English help menu:
+![kizagan7](https://user-images.githubusercontent.com/68844502/177312228-807d54c8-d2e0-4559-b670-cadaa8a2a942.PNG)
 
-![kizagan6](https://user-images.githubusercontent.com/68844502/177044248-1d8a0023-7a28-42cd-9847-27a2e74c8066.PNG)
+![kizagan8](https://user-images.githubusercontent.com/68844502/177312229-59de9db9-59a2-4930-b5b1-423ed011053c.PNG)
 
-![kizagan7](https://user-images.githubusercontent.com/68844502/177044249-32d8a865-b886-47e1-b3de-b3ca846f0f74.PNG)
+![kizagan9](https://user-images.githubusercontent.com/68844502/177312230-6a4e6804-7c9c-4b20-9283-db87240bd36c.PNG)
 
-![kizagan8](https://user-images.githubusercontent.com/68844502/177044251-62cc6c68-1a0e-4ab5-892d-05f2d10137c7.PNG)
+Taking camera pictures,screenshots,keylogs and microphone recording...
+![kizagan10](https://user-images.githubusercontent.com/68844502/177312217-cfda9dd7-5965-4735-b98f-f2602b18477f.PNG)
 
+
+
+# TR örnek kullanımlar : 
+
+Bağlantılar dinleniyor.
+
+![kizagan11](https://user-images.githubusercontent.com/68844502/177312667-d116c2fd-176a-4fbe-b01f-57e8c5d1fa2d.PNG)
+
+Bir bağlantı geldi.
+![kizagan12](https://user-images.githubusercontent.com/68844502/177312670-07032d9f-85c7-4b08-a3e3-ff0b6df970b7.PNG)
+
+Türkçe yardim menüsü.
+![kizagan13](https://user-images.githubusercontent.com/68844502/177312672-c4addcbc-cad7-4d77-b8d5-0b6f052f6a8d.PNG)
+
+![kizagan14](https://user-images.githubusercontent.com/68844502/177312675-27bb1307-80d3-481c-9c38-159e1cb8944c.PNG)
+
+![kizagan15](https://user-images.githubusercontent.com/68844502/177312680-55e49a94-f0b1-46b2-a395-4021945dde0c.PNG)
+
+Kamera resimleri,ekran görüntüleri,kurbanin bastigi tuslar ve kurbanin mikrofon kaydini almak...
+![kizagan16](https://user-images.githubusercontent.com/68844502/177312682-52f4a3a3-6d9d-4f52-ab08-f5cc6559fbf3.PNG)
 
 
 # Author Instagram : https://www.instagram.com/arduinocum.py/
+# Yazarın Instagramı : https://www.instagram.com/arduinocum.py/
