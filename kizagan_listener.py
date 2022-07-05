@@ -372,11 +372,11 @@ def Language_Choice_And_Update():
                 def Guncelleme():
                     print(Fore.RED+"[!]Güncelleme mevcut.İndirmek ve kurmak ister misiniz?(E/H)")
                     guncelleme_cevap = input(Fore.MAGENTA+"Guncelleme yapilsin? :")
-                    if guncelleme_cevap == "E" or "e":
+                    if guncelleme_cevap == "E" or guncelleme_cevap == "e":
                         version_control.Update()
                         print(Fore.BLUE+"[+]Güncelleme yapıldı.Güncellenmiş dosyanız = updated_kizagan arik onu kullanabilirsiniz.")
                         exit()
-                    elif guncelleme_cevap == "H" or "h":
+                    elif guncelleme_cevap == "H" or guncelleme_cevap == "h":
                         print(Fore.YELLOW+"[+]Güncelleme yapılmayacaktır.")
                         time.sleep(1)
                         dinleyici = TR_Dinleyici(args["ip_address"], int(args["port"]))
@@ -395,11 +395,11 @@ def Language_Choice_And_Update():
                 def Updating():
                     print(Fore.RED + "[!]Update avaliable.Do you want to download?(Y/N)")
                     updating_answer = input(Fore.MAGENTA + "Make an update? :")
-                    if updating_answer == "Y" or "y":
+                    if updating_answer == "Y" or updating_answer == "y":
                         version_control.Update()
                         print(Fore.BLUE + "[+]Update was successfully.You can use updated_kizagan file.")
                         exit()
-                    elif updating_answer == "N" or "n":
+                    elif updating_answer == "N" or updating_answer == "n":
                         print(Fore.YELLOW + "[+]There will be no update.")
                         time.sleep(1)
                         listener = EN_Listener(args["ip_address"], int(args["port"]))
