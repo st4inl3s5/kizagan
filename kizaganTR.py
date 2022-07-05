@@ -211,7 +211,7 @@ def Baglanti_Dene():
     while True:
         time.sleep(5)
         try:
-            soket = Soket_baglanti("192.168.1.105", 4444)
+            soket = Soket_baglanti("192.168.1.105", 4444) # Bu değerleri kendinize göre değiştirin.
             soket.Soket_Basla()
         except Exception:
             Baglanti_Dene()
