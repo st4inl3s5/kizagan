@@ -11,7 +11,7 @@ def Get_Latest_Info():
 
 def Get_Current_Info():
     try:
-        with open("version.json","r") as file:
+        with open("util/version.json","r") as file:
             current_info = json.loads(file.read())
         return current_info
     except FileNotFoundError:
