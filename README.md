@@ -8,8 +8,8 @@ tr : KIZAGAN python ile yapılmış bir backdoor'dur.Bu backdoor kurbanin kamera
 
 Bu backdoor ile işleyebileceğiniz suçlardan sorumlu değilim.
 
-# New update version (1.0.1)
-New feautes :
+# New update version (1.2)
+New feautures :
 
 When backdoor opens, it makes itself permament automatically.
 
@@ -19,10 +19,14 @@ Better help menu.
 
 When you listener start,the script will see if there is an update(If there is an update, the script will ask you make an update.)
 
+When the connection established to victim,the backdoor asks to record microphone.(I added this because recording microphone consumes lot of victims RAM.)
+
+Permanance exist bug fixed.
+
 Readable commands for user-oriented.
 
 
-tr:
+tr: Yeni güncelleme versiyon (1.2)
 Yeni özellikler :
 
 Artık,backdoor kurban bilgisayarda açıldığı zaman otomatik olarak kendisini kalıcı yapacak.
@@ -32,6 +36,10 @@ Dil seçenekleri geldi.
 Daha iyi yardim menüsü.
 
 Dinleyici'yi başlattığında,script güncelleme var mı diye bakacak(Eğer varsa,script sana güncelleme yapılsın mı diye soracak.)
+
+Kurban ile bağlantı sağlandığında,backdoor bize mikrofonu kaydedeyim mi diye soracak.(Mikrofonu kaydetmek çok RAM yediği için bu özelliği ekledim.)
+
+Kalıcılık çakışması bugu düzeltildi.
 
 Kullanıcıya yönelik okunabilir komutlar.
 
@@ -47,7 +55,7 @@ Kullanıcıya yönelik okunabilir komutlar.
 
 # Usage : 
 
-Go to kizaganEN.py 214.line and change the ip according to yourself.(You can change the port if you want.)Then convert this file to exe and send to a victim.Wait for the victim opens the backdoor.
+Open the kizaganEN.py with text editor and change the ip and port according to yourself.
 
 ![kizagan1](https://user-images.githubusercontent.com/68844502/177311519-5368fd34-4f8d-41cc-8582-81162d87329f.PNG)
 
@@ -95,7 +103,7 @@ Taking camera pictures,screenshots,keylogs and microphone recording...
 
 # Kullanım :
 
-kizaganTR.py ' deki 214.satırda ip adresini kendinize göre değiştirin.(portu da değiştirebilirsiniz isterseniz.)Daha sonra bu dosyayı exe'ye çevirin ve bir kurbana gönderin.Kurbanın bu dosyayı açmasını bekleyin.
+kizaganTR.py'yi bir text editörü ile açın, ip ve portu kendinize göre değiştirin.
 
 ![kizagan2](https://user-images.githubusercontent.com/68844502/177311680-9d6093a8-d118-4b89-a955-372bbadc7961.PNG)
 
