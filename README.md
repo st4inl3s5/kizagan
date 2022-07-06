@@ -1,12 +1,14 @@
 # KIZAGAN
 KIZAGAN is a python computer backdoor and it can take camera pictures,screenshot,getting microphone sounds... etc.
 
+tr : KIZAGAN python ile yapılmış bir backdoor'dur.Bu backdoor kurbanin kamerasından görüntüler alabilir,ekran görüntüsü alabilir,mikrofon kaydı yapabilir ve daha fazlası...
+
 # EDUCATIONAL PURPOSES ONLY.
 
 I am not responsible for the crimes you may commit with this backdoor.
 
 
-tr : KIZAGAN python ile yapılmış bir backdoor'dur.Bu backdoor kurbanin kamerasından görüntüler alabilir,ekran görüntüsü alabilir,mikrofon kaydı yapabilir ve daha fazlası...
+
 
 # SADECE EĞİTİM AMAÇLIDIR.
 
