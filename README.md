@@ -14,41 +14,15 @@ I am not responsible for the crimes you may commit with this backdoor.
 
 Bu backdoor ile işleyebileceğiniz suçlardan sorumlu değilim.
 
-# New update version (1.2)
+# New update version (1.3)
 New feautures :
 
-When backdoor opens, it makes itself permament automatically.
+Chat command added.You can chat with victim,with gui now.
 
-Language options came.
-
-Better help menu.
-
-When you listener start,the script will see if there is an update(If there is an update, the script will ask you make an update.)
-
-When the connection established to victim,the backdoor asks to record microphone.(I added this because recording microphone consumes lot of victims RAM.)
-
-Permanance exist bug fixed.
-
-Readable commands for user-oriented.
-
-
-tr: Yeni güncelleme versiyon (1.2)
+tr: Yeni güncelleme versiyon (1.3)
 Yeni özellikler :
 
-Artık,backdoor kurban bilgisayarda açıldığı zaman otomatik olarak kendisini kalıcı yapacak.
-
-Dil seçenekleri geldi.
-
-Daha iyi yardim menüsü.
-
-Dinleyici'yi başlattığında,script güncelleme var mı diye bakacak(Eğer varsa,script sana güncelleme yapılsın mı diye soracak.)
-
-Kurban ile bağlantı sağlandığında,backdoor bize mikrofonu kaydedeyim mi diye soracak.(Mikrofonu kaydetmek çok RAM yediği için bu özelliği ekledim.)
-
-Kalıcılık çakışması bugu düzeltildi.
-
-Kullanıcıya yönelik okunabilir komutlar.
-
+Sohbet özelliği eklendi.Artık kurban ile sohbet edebileceksiniz.Ayrıca arayüzü de var.
 
 # ENGLISH SETUP and USAGE :
 
