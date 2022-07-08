@@ -31,7 +31,7 @@
 	▲													▲
 	╰──▶ Removes the permanance.										╰──▶ Shows this message.
 
-	permanance												chat
+	permanance												chat(NEW!!!!)
 	▲													▲
 	╰──▶ Activates permanance.										╰──▶ Chat with victim.(Please read the line about
 														'chat' in help command before you use this command.)
