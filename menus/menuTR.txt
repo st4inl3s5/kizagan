@@ -33,7 +33,7 @@
 	▲													▲
 	╰──▶ Kaliciligi kaldirir.										╰──▶ Bu mesajı gösterir.
 
-	kalicilik												sohbet
+	kalicilik												sohbet(YENİ!!!!)
 	▲													▲
 	╰──▶ Kaliciligi aktifleştirir.										╰──▶ Kurban ile sohbet edin.
 	 
