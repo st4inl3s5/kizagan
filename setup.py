@@ -3,7 +3,7 @@ import subprocess
 import os
 import time
 
-yazi1 = """ 
+yazi1 = """
 
 ██╗░░██╗██╗███████╗░█████╗░░██████╗░░█████╗░███╗░░██╗
 ██║░██╔╝██║╚════██║██╔══██╗██╔════╝░██╔══██╗████╗░██║
@@ -59,5 +59,6 @@ print("\t\t\t\t\t\tAuthor : Yiğit Aydemir\n\n\n\n")
 subprocess.call(["pip","install","colorama"],shell=True)
 subprocess.call(["pip","install","simplejson"],shell=True)
 subprocess.call(["pip","install","datetime"],shell=True)
+subprocess.call(["pip","install","tk"],shell=True)
 print("\n\n[+]Setup completed successfully./Kurulum başarıyla tamamlandı.")
 exit()
