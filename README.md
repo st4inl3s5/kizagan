@@ -14,15 +14,15 @@ I am not responsible for the crimes you may commit with this backdoor.
 
 Bu backdoor ile işleyebileceğiniz suçlardan sorumlu değilim.
 
-# New update version (1.3)
+# New update version (1.4)
 New feautures :
 
-Chat command added.You can chat with victim,with gui now.
+Optional : When the trojan executed on victim's machine,the file(you specified on code) will started and trojan will run on background.So,the trojan will be less suspicious.
 
-tr: Yeni güncelleme versiyon (1.3)
+tr: Yeni güncelleme versiyon (1.4)
 Yeni özellikler :
 
-Sohbet özelliği eklendi.Artık kurban ile sohbet edebileceksiniz.Ayrıca arayüzü de var.
+Opsiyonel : Trojan kurban bilgisayarda çalıştırıldığı zaman,kodda belirttiğiniz dosya çalışacak ve trojan arkaplanda çalışacak.Böylece,trojan daha az şüpheli olacak.
 
 # ENGLISH SETUP and USAGE :
 
