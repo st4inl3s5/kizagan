@@ -1,4 +1,4 @@
-Yeni güncelleme versiyon (v1.2)
+# Yeni güncelleme versiyon (v1.2)
 
 --Dil seçenekleri geldi.
 
