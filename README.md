@@ -1,46 +1,42 @@
-# KIZAGAN
-KIZAGAN is a python computer backdoor and it can take camera pictures,screenshot,getting microphone sounds... etc.
+# KIZAGAN (ENGLISH EXPRESSION)
+KIZAGAN is a python backdoor(Remote Access Trojan) and it can take camera pictures,screenshots,getting microphone sounds... etc.
 
-tr : KIZAGAN python ile yapılmış bir backdoor'dur.Bu backdoor kurbanin kamerasından görüntüler alabilir,ekran görüntüsü alabilir,mikrofon kaydı yapabilir ve daha fazlası...
 
 # EDUCATIONAL PURPOSES ONLY.
 
 I am not responsible for the crimes you may commit with this backdoor.
 
 
-
-
-# SADECE EĞİTİM AMAÇLIDIR.
-
-Bu backdoor ile işleyebileceğiniz suçlardan sorumlu değilim.
-
 # New update version (1.4)
 New feautures :
 
 Optional : When the trojan executed on victim's machine,the file(you specified on code) will started and trojan will run on background.So,the trojan will be less suspicious.
 
-tr: Yeni güncelleme versiyon (1.4)
-Yeni özellikler :
 
-Opsiyonel : Trojan kurban bilgisayarda çalıştırıldığı zaman,kodda belirttiğiniz dosya çalışacak ve trojan arkaplanda çalışacak.Böylece,trojan daha az şüpheli olacak.
-
-# ENGLISH SETUP and USAGE :
-
-
-# Setup : 
-
+# SETUP :
 
 # python setup.py
 
 
-# Usage : 
+# USAGE : 
 
 Open the kizaganEN.py with text editor and change the ip and port according to yourself.
 
-![kizagan1](https://user-images.githubusercontent.com/68844502/177414314-8fa96e2d-60a9-4777-80a4-5303d713266a.PNG)
+![kizaganEN1](https://user-images.githubusercontent.com/68844502/178123760-b3e5cc59-9f9a-48c4-9d78-e5d058d939c8.PNG)
 
+If you want the Trojan to run simultaneously with a file you specify,change the value of Open_Added_File function.If you don't want,just convert to exe with pyinstaller.
 
-Finally, use this command to start listener in your machine :
+![kizaganEN2](https://user-images.githubusercontent.com/68844502/178124236-ed9e8a5f-8482-46ef-b69b-77d160a45083.PNG)
+
+Then,use the pyinstaller to convert exe with file to be added, with command : (Be sure the file to be added and kizaganEN.py in the same location.)(Do this converting process in windows machine.In linux,some errors may occur.)
+
+# pyinstaller --onefile --noconsole --icon <your ico file (if you want)> --add-data "<examplefile.pdf>;." -w kizaganEN.py
+
+![kizaganEN3](https://user-images.githubusercontent.com/68844502/178124176-4154d80e-0676-4690-bf7d-a0c00a05e141.jpg)
+
+Send this exe file to victim and wait for the victim execute the trojan.
+
+Finally, use this command to start listener in your machine and wait the connection.(You don't need to start listener now,because the trojan will send you connection every 5 seconds.) :
 
 # python kizagan_listener.py -ip <ip_address_to_listen> -p <port_number_to_listen>
 
@@ -49,18 +45,17 @@ Finally, use this command to start listener in your machine :
 ![kizagan4](https://user-images.githubusercontent.com/68844502/177312014-30db5b8b-db14-4177-bf39-c102e6a88d76.PNG)
 
 
-
-# EN example usages :
+# Example usages :
 
 Listening connections.
 
 ![kizagan5](https://user-images.githubusercontent.com/68844502/177312224-02e6f87d-d837-4f1b-b123-1e069fb9176e.PNG)
 
-A connection came.
+Victim executes the trojan and a connection comes.
 
 ![kizagan6](https://user-images.githubusercontent.com/68844502/177312225-16a19f54-6f81-4f90-bb25-f9eb9ec1541a.PNG)
 
-English help menu:
+Help menu:
 
 ![kizagan7](https://user-images.githubusercontent.com/68844502/177312228-807d54c8-d2e0-4559-b670-cadaa8a2a942.PNG)
 
@@ -74,22 +69,45 @@ Taking camera pictures,screenshots,keylogs and microphone recording...
 
 # Author Instagram : https://www.instagram.com/arduinocum.py/
 
-# TURKISH SETUP and USAGE:
+# KIZAGAN (TÜRKÇE ANLATIM)
+KIZAGAN bir python backdoorudur(Remote Access Trojan) ve bu backdoor kamera görüntüleri,ekran görüntüleri,mikrofon kayıtları vb. alabilir...
 
-# Kurulum : 
 
+# SADECE EĞİTİM AMAÇLIDIR.
+
+Bu backdoor ile işleyebileceğiniz suçlardan sorumlu değilim.
+
+
+# Yeni güncelleme versiyon (1.4)
+Yeni özellikler :
+
+Opsiyonel : Trojan kurbanın makinesinde çalıştırıldığında, dosya (kodda belirttiğiniz) çalışacak ve trojan arka planda çalışacaktır. Böylece trojan daha az şüpheli olacaktır.
+
+
+# KURULUM : 
 
 # python setup.py
 
 
-# Kullanım :
+# KULLANIM :
 
 kizaganTR.py'yi bir text editörü ile açın, ip ve portu kendinize göre değiştirin.
 
-![kizagan2](https://user-images.githubusercontent.com/68844502/177414347-bcdeda6b-be3a-4bd7-88a2-bbcb799f1329.PNG)
+![kizaganTR1](https://user-images.githubusercontent.com/68844502/178124576-f5b0ba3c-55f6-440f-8a7d-57bad8e50138.PNG)
 
+Trojan'ın belirttiğiniz bir dosya ile aynı anda açılmasını istiyorsanız,Eklenmis_Dosya_Ac fonksiyonunun değerini değiştirin. İstemiyorsanız, pyinstaller ile exe'ye dönüştürmeniz yeterlidir.
 
-Son olarak,bu komutu kullanarak dinleyiciyi kendi makinenizde başlatın :
+![kizaganTR2](https://user-images.githubusercontent.com/68844502/178124701-c69c566f-f0d9-48f1-bde0-a2003236a377.PNG)
+
+Ardından, eklenecek dosya ile exe'yi dönüştürmek için pyinstaller'ı şu komut ile kullanın: (Eklenecek dosyanın ve kizaganEN.py'nin aynı konumda olduğundan emin olun.)(Bu dönüştürme işlemini Windows makinesinde yapın.Linux'ta bazı hatalar çıkabilir.)
+
+# pyinstaller --onefile --noconsole --icon <ikon dosyaniz (eğer isterseniz)> --add-data "<ornekdosya.pdf>;." -w kizaganTR.py
+
+![kizaganTR3](https://user-images.githubusercontent.com/68844502/178124847-ac0f515f-bc43-40b2-9872-2384b76f2ce2.jpg)
+
+Kurbana dönüştürdüğünüz bu exe dosyasını gönderin ve çalıştırmasını bekleyin.
+
+Son olarak,bu komutu kullanarak dinleyiciyi kendi makinenizde başlatın ve bağlantıyı bekleyin.(Dinleyiciyi şimdi başlatmanıza gerek yok, çünkü trojan size her 5 saniyede bir bağlantı gönderecektir.) :
 
 # python kizagan_listener.py -ip <dinlemek_istediğiniz_ip_adresi> -p <dinlemek_istediğiniz_port_numarası>
 
@@ -99,13 +117,13 @@ Son olarak,bu komutu kullanarak dinleyiciyi kendi makinenizde başlatın :
 
 
 
-# TR örnek kullanımlar : 
+# Örnek kullanımlar : 
 
 Bağlantılar dinleniyor.
 
 ![kizagan11](https://user-images.githubusercontent.com/68844502/177312667-d116c2fd-176a-4fbe-b01f-57e8c5d1fa2d.PNG)
 
-Bir bağlantı geldi.
+Kurban trojanı çalıştırdı ve bir bağlantı geldi.
 
 ![kizagan12](https://user-images.githubusercontent.com/68844502/177312670-07032d9f-85c7-4b08-a3e3-ff0b6df970b7.PNG)
 
