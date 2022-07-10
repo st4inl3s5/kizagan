@@ -92,6 +92,8 @@ Opsiyonel : Trojan kurbanın makinesinde çalıştırıldığında, dosya (kodda
 
 # KULLANIM :
 
+# Türkçe kullanım videosu : https://www.youtube.com/watch?v=b4hZe4SGFyw&t=8s
+
 kizaganTR.py'yi bir text editörü ile açın, ip ve portu kendinize göre değiştirin.
 
 ![kizaganTR4](https://user-images.githubusercontent.com/68844502/178145568-33dcdb0e-a1c4-4e7c-8be9-0725be26035c.PNG)
