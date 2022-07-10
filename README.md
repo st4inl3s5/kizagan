@@ -7,10 +7,11 @@ KIZAGAN is a python backdoor(Remote Access Trojan) and it can take camera pictur
 I am not responsible for the crimes you may commit with this backdoor.
 
 
-# New update version (1.4)
+# New update version (1.4.1)
 New feautures :
 
-Optional : When the trojan executed on victim's machine,the file(you specified on code) will started and trojan will run on background.So,the trojan will be less suspicious.
+When you converting exe the error occurs"no module named <module>" this error fixed.(This error can also be caused by the lack of some libraries on your computer.)
+
 
 
 # SETUP :
@@ -79,10 +80,10 @@ KIZAGAN bir python backdoorudur(Remote Access Trojan) ve bu backdoor kamera gör
 Bu backdoor ile işleyebileceğiniz suçlardan sorumlu değilim.
 
 
-# Yeni güncelleme versiyon (1.4)
+# Yeni güncelleme versiyon (1.4.1)
 Yeni özellikler :
 
-Opsiyonel : Trojan kurbanın makinesinde çalıştırıldığında, dosya (kodda belirttiğiniz) çalışacak ve trojan arka planda çalışacaktır. Böylece trojan daha az şüpheli olacaktır.
+Exe'ye çevirirken no module named hatası düzeltildi.(Bu hata bilgisayarınızda bazı kütüphanelerin bulunmamasından da kaynaklanıyor olabilir.)
 
 
 # KURULUM : 
