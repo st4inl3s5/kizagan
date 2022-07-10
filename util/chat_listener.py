@@ -5,15 +5,13 @@ import argparse
 import colorama
 
 colorama.init(autoreset=True)
-"""
+
 ap = argparse.ArgumentParser()
 ap.add_argument("-ip", "--ip_address", required=True,help="Set the ip address to listen chat./Chat'i dinlemek icin ip adresi giriniz.")
 ap.add_argument("-p", "--port", required=True,help="Set the port to listen chat./Chat'i dinlemek için port numarası giriniz.")
-ap.add_argument("-l", "--language", required=False, help="Set the language(en/tr) / Dil seçiniz.(en/tr)")
-args = vars(ap.parse_args())"""
+args = vars(ap.parse_args())
 
-ip_address = "192.168.1.105"
-port_number = 5555
+
 
 class Chat():
     def __init__(self,ip,port):
@@ -58,4 +56,4 @@ class Chat():
             self.messages.see("end")
 
 
-Chat(ip_address,port_number)
+Chat(args["ip_address"],int(args["port"]))
