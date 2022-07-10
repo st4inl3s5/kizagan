@@ -22,7 +22,7 @@ Optional : When the trojan executed on victim's machine,the file(you specified o
 
 Open the kizaganEN.py with text editor and change the ip and port according to yourself.
 
-![kizaganEN1](https://user-images.githubusercontent.com/68844502/178123760-b3e5cc59-9f9a-48c4-9d78-e5d058d939c8.PNG)
+
 
 If you want the Trojan to run simultaneously with a file you specify,change the value of Open_Added_File function.If you don't want,just convert to exe with pyinstaller.
 
@@ -93,7 +93,7 @@ Opsiyonel : Trojan kurbanın makinesinde çalıştırıldığında, dosya (kodda
 
 kizaganTR.py'yi bir text editörü ile açın, ip ve portu kendinize göre değiştirin.
 
-![kizaganTR1](https://user-images.githubusercontent.com/68844502/178124576-f5b0ba3c-55f6-440f-8a7d-57bad8e50138.PNG)
+
 
 Trojan'ın belirttiğiniz bir dosya ile aynı anda açılmasını istiyorsanız,Eklenmis_Dosya_Ac fonksiyonunun değerini değiştirin. İstemiyorsanız, pyinstaller ile exe'ye dönüştürmeniz yeterlidir.
 
