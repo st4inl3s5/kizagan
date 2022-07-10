@@ -25,3 +25,11 @@
 # Yeni güncelleme versiyon (v1.4)
 
 --Opsiyonel : Trojan kurban bilgisayarda çalıştırıldığı zaman,kodda belirttiğiniz dosya çalışacak ve trojan arkaplanda çalışacak.Böylece,trojan daha az şüpheli olacak.
+
+
+
+# Yeni güncelleme versiyon (v1.4.1)
+
+--Exe'ye çevirirken no module named hataları düzeltildi.(Bu hatalar bilgisayarınızda bazı kütüphanelerin olmamasından da kaynaklanıyor olabilir.)
+
+--Türkçe kullanım videosu eklendi.(İngilizce yakında geliyor.)
