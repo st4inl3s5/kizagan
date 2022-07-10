@@ -93,7 +93,7 @@ Exe'ye çevirirken no module named hatası düzeltildi.(Bu hata bilgisayarınız
 
 # KULLANIM :
 
-# Türkçe kullanım videosu : https://www.youtube.com/watch?v=b4hZe4SGFyw&t=8s
+# Türkçe kullanım videosu : https://www.youtube.com/watch?v=b4hZe4SGFyw
 
 kizaganTR.py'yi bir text editörü ile açın, ip ve portu kendinize göre değiştirin.
 
