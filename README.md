@@ -11,7 +11,8 @@ I am not responsible for the crimes you may commit with this backdoor.
 New feautures :
 
 When you converting exe the error occurs"no module named <module>" this error fixed.(This error can also be caused by the lack of some libraries on your computer.)
-Added turkish usage video.(English is coming soon)
+
+Added turkish and english usage video.
 
 
 # SETUP :
@@ -20,6 +21,8 @@ Added turkish usage video.(English is coming soon)
 
 
 # USAGE : 
+
+# English usage video : https://www.youtube.com/watch?v=d0xzBvH9OxE
 
 Open the kizaganEN.py with text editor and change the ip and port according to yourself.
 
@@ -84,7 +87,8 @@ Bu backdoor ile işleyebileceğiniz suçlardan sorumlu değilim.
 Yeni özellikler :
 
 Exe'ye çevirirken no module named hatası düzeltildi.(Bu hata bilgisayarınızda bazı kütüphanelerin bulunmamasından da kaynaklanıyor olabilir.)
-Türkçe kullanım videosu eklendi.(İngilizce yakında geliyor.)
+
+Türkçe ve ingilizce kullanım videoları eklendi.
 
 # KURULUM : 
 
