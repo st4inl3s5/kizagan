@@ -29,7 +29,7 @@ class Chat():
         self.chat_gui.title("You are chatting with victim.")
         self.messages = tkinter.Text(self.chat_gui, width=75, height=10, fg="#0E6B0E", bg="#000000")
         self.messages.place(x=0, y=0)
-        self.messages.insert("1.0","For send to message to victim,write the message 'your message' part and click the button.")
+        self.messages.insert("1.0","For send to message to victim,write the message 'your message' part and click the button.If you want to exit,print 'exit' or 'cikis' and send message.")
         self.your_message_label = tkinter.Label(self.chat_gui, width=20, text="Your Message :", fg="#0D1C6E")
         self.your_message_label.place(x=-40, y=250)
         self.message_input = tkinter.Entry(self.chat_gui, width=50)
