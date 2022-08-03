@@ -1,5 +1,5 @@
 # KIZAGAN (ENGLISH EXPRESSION)
-KIZAGAN is a python backdoor(Remote Access Trojan) and it can take camera pictures,screenshots,getting microphone sounds... etc.
+KIZAGAN is a backdoor built with python(Remote Access Trojan) and it can take camera pictures,screenshots,getting microphone sounds... etc.
 
 
 # EDUCATIONAL PURPOSES ONLY.
@@ -75,7 +75,7 @@ Taking camera pictures,screenshots,keylogs and microphone recording...
 # Author Instagram : https://www.instagram.com/arduinocum.py/
 
 # KIZAGAN (TÜRKÇE ANLATIM)
-KIZAGAN bir python backdoorudur(Remote Access Trojan) ve bu backdoor kamera görüntüleri,ekran görüntüleri,mikrofon kayıtları vb. alabilir...
+KIZAGAN bir python ile yapılmış backdoorudur(Remote Access Trojan) ve bu backdoor kamera görüntüleri,ekran görüntüleri,mikrofon kayıtları vb. alabilir...
 
 
 # SADECE EĞİTİM AMAÇLIDIR.
