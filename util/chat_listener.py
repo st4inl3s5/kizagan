@@ -8,7 +8,7 @@ colorama.init(autoreset=True)
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-ip", "--ip_address", required=True,help="Set the ip address to listen chat./Chat'i dinlemek icin ip adresi giriniz.")
-ap.add_argument("-p", "--port", required=True,help="Set the port to listen chat./Chat'i dinlemek için port numarası giriniz.")
+ap.add_argument("-p", "--port", required=True,help="Set the port to listen chat./Chat'i dinlemek icin port numarası giriniz.")
 args = vars(ap.parse_args())
 
 
