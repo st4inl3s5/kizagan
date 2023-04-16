@@ -2,6 +2,38 @@
 
 KIZAGAN is a remote access trojan built with python.It can take victim's camera snapshots, microphone sounds, screenshots... Also it has keylogger inside and it is undetectable.
 
+## Features :
+
++ Basic file commands (rename, delete, create etc.)
+
++ Executing windows cmd commands directly.
+
++ Can get microphone sounds.
+
++ Can get victim's camera snapshots.
+
++ Can get screenshot from victim's computer.
+
++ Has chat command to chat with victim.
+
++ Can download files from victim's computer.
+
++ Can upload files to victim's computer.
+
++ Has keylogger.
+
++ Can speak words in victim's computer.
+
++ Have permanance that can hide himself and adding himself in registry.
+
++ Can take wifi names and passwords from victim's computer.
+
++ Can merge with a file that you specify.
+
++ Constant connections.
+
++ Undetectable.
+
 Antivirus scan result : (btw, scan it on non-distrubuted online antivirus scanners please.)
 
 ![scan-result](https://user-images.githubusercontent.com/68844502/232308126-a7756b05-6d6f-4a4f-abac-10a87d0514f1.PNG)
