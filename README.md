@@ -52,7 +52,7 @@ Antivirus scan result : (btw, scan it on non-distrubuted online antivirus scanne
 
 7. Let's say, the victim executed the trojan.We can get this connection by following command in linux :
 
-+ python kizagan_listener.py -ip <<client ip>> -p <<port>>
++ python kizagan_listener.py -ip ip -p port
 
 ![a8](https://user-images.githubusercontent.com/68844502/232312631-5850918b-f8b3-4a4d-b66e-9f2e0a809dc4.PNG)
 
