@@ -88,6 +88,11 @@ Firstly, you must need a windows computer.Because we don't want to encounter any
 
 ![kizagan8](https://github.com/st4inl3s5/kizagan/assets/68844502/ca7bc8e9-1be1-456a-a7af-069609b32e23)
 
+10. And don't forget to remove theese parts in client.py:
+
+![kizagan9](https://github.com/st4inl3s5/kizagan/assets/68844502/a71ed786-536d-4d20-901b-02a115d81f6b)
+
+
 ### You can contact me here or on instagram
 
 + https://www.instagram.com/arduinocum.py/
