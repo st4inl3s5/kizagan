@@ -79,6 +79,7 @@ class Server:
         return file_date
 
     def server_main(self):
+        print(self.get_help_menu())
         while True:
             self.command_input = input("Enter Command :")
             self.command_input = self.command_input.split(" ")
