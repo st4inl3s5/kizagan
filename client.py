@@ -42,7 +42,7 @@ class Client:
 
     def execute_command(self, command):
         command_output = subprocess.check_output(command, shell=True)
-        return command_output.decode("utf-8")
+        return command_output.decode("Latin1")
 
     def get_file(self, file_name):
         with open(file_name, "rb") as file:
