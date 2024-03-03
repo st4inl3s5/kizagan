@@ -2,6 +2,8 @@
 
 Kizagan is a RAT,C2 tool built with python.Kizagan can build executables and control infected machines.
 
+![a](https://github.com/st4inl3s5/kizagan/assets/68844502/704332a0-e02c-43f2-b651-0cb6434e0610)
+
 ## Features
 
 + Basic file/directory commands.(rename, delete, create etc.)
