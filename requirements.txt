@@ -1,0 +1,11 @@
+colorama
+pyinstaller
+pillow
+opencv-python
+numpy
+pvrecorder
+pynput
+progress
+halo
+datetime
+pygrabber

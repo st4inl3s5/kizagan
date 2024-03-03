@@ -1,0 +1,36 @@
+{
+    "kizagan_terminal_help":{
+        "commands": "shell              cam_list          cam_snapshot     cam_stream\nscreen_shot        screen_stream     mic_list         keystroke_start\nkeystroke_stop     keystroke_get     help             clear              \nexit\n\n:.:If you want to get information of a command, enter 'help <command>' or enter 'help all' to get information of all commands.",
+        "detailed_commands":{
+            "shell": "shell::.:Get a shell terminal and execute commands on victim's system terminal.\nUsage: shell",
+            "screen_shot": "screen_shot::.:Gets a screenshot from victim's computer and saves to your computer.\nUsage: screen_shot",
+            "screen_stream": "screen_stream::.:Watch the victim's screen.\nUsage: screen_stream",
+            "cam_list": "cam_list::.:Lists all available camera indexes of victim's computer.\nUsage: cam_list",
+            "cam_snapshot": "cam_snapshot::.:Gets a camera snapshot from victim's camera which has given index.To get list of available cameras, enter 'cam_list' command.\nUsage: cam_snapshot <camera_index>",
+            "cam_stream": "cam_stream::.:Watch the victim's camera which has given index.To get list of available cameras, enter 'cam_list' command.\nUsage: cam_stream <camera_index>",
+            "mic_list": "mic_list::.:Lists all available microphone indexes of victim's computer.\nUsage: mic_list",
+            "keystroke_start": "keystroke_start::.:Starts the keylogger.\nUsage: keystroke_start",
+            "keystroke_stop": "keystroke_stop::.:Stops the keylogger.\nUsage: keystroke_stop",
+            "keystroke_get": "keystroke_get::.:Downloads the keylog.\nUsage: keystroke_get",
+            "help": "help::.:Prints available all commands without their explanation if no command given.If a command given, prints explanation and usage of given command.\nUsage: 'help <command_name>' or 'help all' to get information of all commands.",
+            "clear": "clear::.:Clear the terminal.\nUsage: clear",
+            "exit": "exit::.:Exit from kizagan terminal.\nUsage: exit"
+        }
+    },
+    "shell_terminal_help":{
+        "commands": "cd         pwd       mkdir         rmdir\nrm         rename    download      upload\nclear      help      exit\n\n:.:Other commands work directly on victim's system terminal(such as 'ls' or 'dir' command).\n\nIf you want to get information of a command or all commands, enter 'help <command>' or enter 'help all' to get information of all commands.",
+        "detailed_commands":{
+            "cd": "cd::.:Changes directory to given path.\nUsage: cd <path_to_be_change>",
+            "pwd": "pwd::.:Shows current directory you in.\nUsage: pwd",
+            "mkdir": "mkdir::.:Creates a directory with given name.\nUsage: mkdir <directory_name>",
+            "rmdir": "rmdir::.:Removes a directory with given name.\nUsage: rmdir <directory_name_to_be_removed>",
+            "rm": "rm::.:Removes a file with given name.\nUsage: rm <file_name_to_be_removed>",
+            "rename": "rename::.:Renames a file/directory to given name.\nUsage: rename <old_name> <new_name>",
+            "download": "download::.:Download a file from victim's computer to your computer.\nUsage: download <absolute_file_path_to_be_downloaded>",
+            "upload": "upload::.:Upload a file from your computer to victim's computer.\nUsage: upload <absolute_file_path_to_be_uploaded> <save_file_path_of_victim's_machine>",
+            "clear": "clear::.:Clear the terminal.\nUsage: clear",
+            "help": "help::.:Prints available all commands without their explanation if no command given.If a command given, prints explanation and usage of given command.\nUsage: 'help <command_name>' or 'help all' to get information of all commands.",
+            "exit": "exit::.:Exit from kizagan terminal.\nUsage: exit"
+        }
+    }
+}
