@@ -303,11 +303,11 @@ def open_merge_file(merge_file):
     merge_file = _MEIPASS + f"\\\{merge_file}"
     subprocess.Popen(merge_file, shell=True)
 
-
-connected = False
-while not connected:
-    try:
-        sleep(3)
-        connected = True
-        Client().main()
-    except: connected = False
+def try_connection():
+    connected = False
+    while not connected:
+        try:
+            sleep(3)
+            connected = True
+            Client().main()
+        except: connected = False
