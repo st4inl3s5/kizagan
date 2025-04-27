@@ -304,10 +304,10 @@ def open_merge_file(merge_file):
     subprocess.Popen(merge_file, shell=True)
 
 def try_connection():
-    while True:
+    connected = False
+    while not connected:
         try:
             sleep(3)
+            connected = True
             Client().main()
-        except:
-            try_connection()
-
+        except: connected = False
